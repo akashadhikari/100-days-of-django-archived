@@ -8,3 +8,6 @@ Applying simple to complex stuff on Django each day for the next 100 days.
 - Create a virtual environment and install all the requirements.
 - Create a Django superuser.
 - Run the local server at.<br>
+
+## Note:
+Everyday log is maintained in 'logs.md' file.
