@@ -10,4 +10,4 @@ Applying simple to complex stuff on Django each day for the next 100 days.
 - Run the local server at.<br>
 
 ## Note:
-Everyday log is maintained in 'logs.md' file.
+Everyday log is maintained in [logs.md](https://github.com/akashadhikari/100-days-of-django/blob/master/logs.md) file.
