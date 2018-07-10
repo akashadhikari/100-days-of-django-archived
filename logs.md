@@ -11,3 +11,10 @@
 
 **Link of Work:**   [Commit](https://github.com/akashadhikari/100-days-of-django/commit/fe2438fed82da75cbe8f5f03c9fa14552f31cb6c)
 
+## Day 1 : July 10 , 2018
+ 
+**Today's Progress** :
+- Basic user login and logout
+- User authentication.
+
+**Thoughts** : ...

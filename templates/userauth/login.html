@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}<br>
+    <div class="container mx-auto" style="width: 1000px;">
+    <h1>Login to continue</h1>
+        <form method="POST">{% csrf_token %}
+            {{ login_form }}
+            <br>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

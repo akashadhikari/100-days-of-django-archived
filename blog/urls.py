@@ -8,5 +8,5 @@ urlpatterns = [
     path('new/', blog_create, name='create'),
     path('s/<pk>/', blog_detail, name='detail'),
     path('s/<pk>/edit/', blog_edit, name='edit'),
-    path('secretshhhhh/<pk>/delete/', blog_delete, name='delete'),
+    path('093fbd18-c370-4dcd-bd69-199311edb878/<pk>/delete/', blog_delete, name='delete'),
 ]
