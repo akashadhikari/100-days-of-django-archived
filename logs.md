@@ -17,4 +17,12 @@
 - Basic user login and logout
 - User authentication.
 
-**Thoughts** : ...
+**Thoughts** : Basic user login is a cool. But maintaining permissions will be more crazier, which I might cover shortly.
+
+## Day 2 : July 11 , 2018
+ 
+**Today's Progress** :
+- User profile generation
+- Media files configuration
+
+**Thoughts** : The idea of user profile initiates a concept of blog social network in this project. Its getting more and more interesting.
