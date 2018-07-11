@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{#    <div class="card bg-dark text-white">#}
+{#        <img class="card-img" height="371" width="754"#}
+{#             src="http://cleo.uwindsor.ca/gata/wp-content/uploads/2015/07/blackboard.png" alt="Card image">#}
+{#        <div class="card-img-overlay">#}
+{#            <h5 class="card-title">#}
+{#                <div style="font-family:Arial">#}
+{#                    Winter is coming.#}
+{#                </div>#}
+{#            </h5>#}
+{#        </div>#}
+{##}
+{#    </div>#}
+
+    <br>
+
+    <div class="container mx-auto" style="width: 1000px;">
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="{{ profile_pic.url }}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ fullname }}</h5>
+                    <p class="card-text">{{ address }}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+            </div>
+            <div class="col-7">
+                Another thing...
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
