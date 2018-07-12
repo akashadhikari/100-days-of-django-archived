@@ -1,8 +1,9 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 
-from .forms import LoginForm
+from .forms import LoginForm, RegisterForm
 
 # Create your views here.
 
@@ -32,6 +33,30 @@ def login_page(request):
         return render(request, 'userauth/login.html', context)
     else:
         return redirect(reverse('blog:list'))
+
+
+def register_page(request):
+    register_form = RegisterForm(request.POST or None)
+    context = {
+        'register_form': register_form
+    }
+    if register_form.is_valid():
+        username = request.POST.get('username')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        password = request.POST.get('password')
+        User.objects.create(username=username,
+                            first_name=first_name,
+                            last_name=last_name,
+                            password=password)
+    if request.method == 'POST':
+        return redirect('userauth:login')
+    else:
+        print('Bhai vayena')
+    if not request.user.is_authenticated:
+        return render(request, 'userauth/register.html', context)
+    else:
+        return redirect('blog:list')
 
 def logout_view(request):
     logout(request)

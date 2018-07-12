@@ -26,3 +26,12 @@
 - Media files configuration
 
 **Thoughts** : The idea of user profile initiates a concept of blog social network in this project. Its getting more and more interesting.
+
+
+## Day 3 : July 12 , 2018
+ 
+**Today's Progress** :
+- User registration frontend and backend.
+- Generation of [Profile model objects using Signals](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html) that are triggered during the creation of User model. Cool stuff!
+
+**Thoughts** : Automatically creating the Profile object during User creation by associating profile with the particular User is a cool concept. The usage of Signal comes vividly here.
