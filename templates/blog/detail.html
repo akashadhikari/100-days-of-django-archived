@@ -9,7 +9,7 @@
                 <h5 class="card-title">
                     <div class="row">
                         <div class="col">
-                            <p>Akash Adhikari</p>
+                            <p>By: <a href="{% url 'profile:profile' username=blog.author %}">{{ author }}</a></p>
                             <hr>
                             <h1>{{ blog.title }}</h1>
                         </div>

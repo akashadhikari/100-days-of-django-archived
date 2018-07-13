@@ -25,7 +25,9 @@ def blog_create(request):
     if blog_form.is_valid():
         title = request.POST.get('title')
         body = request.POST.get('content')
-        Blog.objects.create(title=title, body=body)
+        new_blog = Blog.objects.create(title=title, body=body)
+        new_blog.author = request.user
+        new_blog.save()
     if request.method == 'POST':
         return redirect(reverse('blog:detail', kwargs={'pk': Blog.objects.last().id}))
     return render(request, "blog/create.html", context)
@@ -34,9 +36,11 @@ def blog_create(request):
 def blog_detail(request, pk):
     blog = get_object_or_404(Blog, id=pk)
     page_title = blog.title + '- TheShevle'
+    author = blog.author.first_name + " " + blog.author.last_name
     context = {
         'blog': blog,
-        'page_title': page_title
+        'page_title': page_title,
+        'author': author
     }
 
     return render(request, "blog/detail.html", context)

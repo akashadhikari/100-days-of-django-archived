@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
 from .forms import LoginForm, RegisterForm
+from userprofile.models import Profile
 
 # Create your views here.
 
@@ -42,11 +43,15 @@ def register_page(request):
         username = request.POST.get('username')
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
+        address = request.POST.get('address')
         password = request.POST.get('password')
         User.objects.create_user(username=username,
                             first_name=first_name,
                             last_name=last_name,
                             password=password)
+        created_profile = Profile.objects.last()
+        created_profile.location = address
+        created_profile.save()
     if request.method == 'POST':
         return redirect('userauth:login')
     else:
