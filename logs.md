@@ -35,3 +35,11 @@
 - Generation of [Profile model objects using Signals](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html) that are triggered during the creation of User model. Cool stuff!
 
 **Thoughts** : Automatically creating the Profile object during User creation by associating profile with the particular User is a cool concept. The usage of Signal comes vividly here.
+
+## Day 4 : July 13 , 2018
+ 
+**Today's Progress** :
+- Registration complete (alert message is remained).
+- User Profile maipulation such as - Showing only respective user's content on his/her profile, **Associating post with user** (in view. not model).
+
+**Thoughts** : Automatically creating the Profile object during User creation by associating profile with the particular User is a cool concept. The usage of Signal comes vividly here.
