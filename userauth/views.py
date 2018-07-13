@@ -25,10 +25,8 @@ def login_page(request):
                 return redirect(reverse('blog:list'))
             else:
                 print('Bhai vayena')
-                messages.add_message(request, messages.INFO, 'Hello world.')
         else:
             print("Username and password doesn't match.")
-            messages.add_message(request, messages.INFO, 'Hello world.')
     if not request.user.is_authenticated:
         return render(request, 'userauth/login.html', context)
     else:
@@ -45,7 +43,7 @@ def register_page(request):
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         password = request.POST.get('password')
-        User.objects.create(username=username,
+        User.objects.create_user(username=username,
                             first_name=first_name,
                             last_name=last_name,
                             password=password)

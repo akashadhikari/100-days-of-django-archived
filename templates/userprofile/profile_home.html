@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{#    <div class="card bg-dark text-white">#}
-{#        <img class="card-img" height="371" width="754"#}
-{#             src="http://cleo.uwindsor.ca/gata/wp-content/uploads/2015/07/blackboard.png" alt="Card image">#}
-{#        <div class="card-img-overlay">#}
-{#            <h5 class="card-title">#}
-{#                <div style="font-family:Arial">#}
-{#                    Winter is coming.#}
-{#                </div>#}
-{#            </h5>#}
-{#        </div>#}
-{##}
-{#    </div>#}
+    {#    <div class="card bg-dark text-white">#}
+    {#        <img class="card-img" height="371" width="754"#}
+    {#             src="http://cleo.uwindsor.ca/gata/wp-content/uploads/2015/07/blackboard.png" alt="Card image">#}
+    {#        <div class="card-img-overlay">#}
+    {#            <h5 class="card-title">#}
+    {#                <div style="font-family:Arial">#}
+    {#                    Winter is coming.#}
+    {#                </div>#}
+    {#            </h5>#}
+    {#        </div>#}
+    {##}
+    {#    </div>#}
 
     <br>
 
@@ -20,16 +20,22 @@
         <div class="row">
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                  <img class="card-img-top" src="{{ profile_pic.url }}" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ fullname }}</h5>
-                    <p class="card-text">{{ location }}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
+                    <img class="card-img-top" src="{{ profile_pic.url }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ fullname }} <a data-toggle="tooltip" title="Edit Profile"><i
+                                class="fas fa-pencil-alt"></i></a></h5>
+                        <p class="card-text">{{ location }}</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-7">
-                Another thing...
+            <div class="col-8">
+                What is Lorem Ipsum?
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
             </div>
         </div>
 

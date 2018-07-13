@@ -17,10 +17,10 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
-                        {{ fullname }}
+                        {{ request.user.first_name }} {{ request.user.last_name }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> My Profile</a>
+                        <a class="dropdown-item" href="{% url 'profile:profile' username=request.user.username %}"><i class="fas fa-user"></i> My Profile</a>
                         <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'userauth:logout' %}">

@@ -8,7 +8,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
     location = models.CharField(max_length=30, blank=True)
-    profile_pic = models.ImageField(default='https://www.feedbackhall.com/uploads/user-icon.png')
+    profile_pic = models.ImageField(default='user-icon.png')
 
     def get_full_name(self):
         return self.user.first_name + " " + self.user.last_name
