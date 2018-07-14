@@ -38,10 +38,7 @@ def blog_detail(request, pk):
     blog = get_object_or_404(Blog, id=pk)
     page_title = blog.title + '- TheShelve'
     author = blog.author.first_name + " " + blog.author.last_name
-    try:
-        like = Like.objects.filter(blog=pk).filter(user=request.user).first()
-    except ObjectDoesNotExist:
-        like = "This"
+    like = Like.objects.filter(blog=pk).filter(user=request.user).first()
     context = {
         'blog': blog,
         'page_title': page_title,
@@ -78,4 +75,11 @@ def blog_delete(request, pk):
 def like_trigger(request, pk):
     blog = get_object_or_404(Blog, id=pk)
     Like.objects.create(blog=blog, user=request.user, like=True)
+    return redirect(reverse('blog:detail', kwargs={'pk': blog.id}))
+
+
+def unlike_trigger(request, pk):
+    blog = get_object_or_404(Blog, id=pk)
+    like = Like.objects.filter(blog=pk).filter(user=request.user).first()
+    like.delete()
     return redirect(reverse('blog:detail', kwargs={'pk': blog.id}))
