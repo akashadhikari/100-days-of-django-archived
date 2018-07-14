@@ -1,6 +1,7 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 
-from .models import Blog
+from .models import Blog, Like
 from .forms import BlogForm
 
 # Create your views here.
@@ -35,12 +36,17 @@ def blog_create(request):
 
 def blog_detail(request, pk):
     blog = get_object_or_404(Blog, id=pk)
-    page_title = blog.title + '- TheShevle'
+    page_title = blog.title + '- TheShelve'
     author = blog.author.first_name + " " + blog.author.last_name
+    try:
+        like = Like.objects.filter(blog=pk).filter(user=request.user).first()
+    except ObjectDoesNotExist:
+        like = "This"
     context = {
         'blog': blog,
         'page_title': page_title,
-        'author': author
+        'author': author,
+        'like': like
     }
 
     return render(request, "blog/detail.html", context)
@@ -67,3 +73,9 @@ def blog_delete(request, pk):
     blog = get_object_or_404(Blog, id=pk)
     blog.delete()
     return redirect(reverse('blog:list'))
+
+
+def like_trigger(request, pk):
+    blog = get_object_or_404(Blog, id=pk)
+    Like.objects.create(blog=blog, user=request.user, like=True)
+    return redirect(reverse('blog:detail', kwargs={'pk': blog.id}))

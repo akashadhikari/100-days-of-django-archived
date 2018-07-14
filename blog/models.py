@@ -13,3 +13,19 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Comment(models.Model):
+    pass
+
+
+class Like(models.Model):
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    like = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.blog.title
+
+    class Meta:
+        unique_together = ('blog', 'user',)
