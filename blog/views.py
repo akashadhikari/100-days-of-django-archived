@@ -38,7 +38,10 @@ def blog_detail(request, pk):
     blog = get_object_or_404(Blog, id=pk)
     page_title = blog.title + '- TheShelve'
     author = blog.author.first_name + " " + blog.author.last_name
-    like = Like.objects.filter(blog=pk).filter(user=request.user).first()
+    if request.user.is_authenticated:
+        like = Like.objects.filter(blog=pk).filter(user=request.user).first()
+    else:
+        like = ''
     context = {
         'blog': blog,
         'page_title': page_title,
