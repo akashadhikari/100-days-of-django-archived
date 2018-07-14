@@ -43,3 +43,11 @@
 - User Profile maipulation such as - Showing only respective user's content on his/her profile, **Associating post with user** (in view. not model).
 
 **Thoughts** : Automatically creating the Profile object during User creation by associating profile with the particular User is a cool concept. The usage of Signal comes vividly here.
+
+## Day 5 : July 14 , 2018
+ 
+**Today's Progress** :
+- Blog post 'Likes' functionality works like a charm.
+- Also added 'Liked by' list view.
+
+**Thoughts** : Maintaining a 'Facebook like' like relationship in our blog was achieved today. I had to deal with a couple of query issues and still some optimization is remained. All in all, it was a hit!
