@@ -40,13 +40,20 @@ def blog_detail(request, pk):
     author = blog.author.first_name + " " + blog.author.last_name
     if request.user.is_authenticated:
         like = Like.objects.filter(blog=pk).filter(user=request.user).first()
+        like_count = Like.objects.filter(blog=pk).count()
+        likers_list = []
+        for each in Like.objects.filter(blog=pk):
+            likers_list.append(each.user.username)
     else:
         like = ''
+        like_count = ''
     context = {
         'blog': blog,
         'page_title': page_title,
         'author': author,
-        'like': like
+        'like': like,
+        'like_count': like_count,
+        'likers_list': likers_list
     }
 
     return render(request, "blog/detail.html", context)

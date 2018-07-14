@@ -60,6 +60,34 @@
                 <p>Posted about {{ blog.created_at }}</p>
                 <p><i class="fas fa-eye"></i> Views: 20</p>
                 {% if request.user.is_authenticated %}
+                    <a data-toggle="modal" data-target="#likedByThesePeople" href="#">{{ like_count }}
+                        {% if like_count == 1 %}like{% else %}likes{% endif %}</a>.
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="likedByThesePeople" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Liked by</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {% for liker in likers_list %}
+                                    <h5><a href="{% url 'profile:profile' username=liker %}">{{ liker }}</a></h5>
+                                        <hr>
+                                    {% endfor %}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     {% if like.user == request.user %}
                         <p><a href="{% url 'blog:unlike' pk=blog.id %}">Unlike</a></p>
                     {% else %}
