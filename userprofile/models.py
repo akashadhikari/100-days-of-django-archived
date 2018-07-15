@@ -27,3 +27,13 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+
+
+class FollowUser(models.Model):
+    following = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='following')
+    is_following = models.BooleanField(default=False)
+    followed_by = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='followed_by')
+
+    def __str__(self):
+        if self.is_following:
+            return self.following.get_full_name() + " is followed by " + self.followed_by.get_full_name()

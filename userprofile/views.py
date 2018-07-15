@@ -12,8 +12,10 @@ def profile_page(request, username):
     profile_pic = user.profile.profile_pic
     location = user.profile.location
     context = {
+        'user': user,
         'blogs': blogs,
         'fullname': full_name,
+        'username': username,
         'last_login': last_login,
         'profile_pic': profile_pic,
         'location': location

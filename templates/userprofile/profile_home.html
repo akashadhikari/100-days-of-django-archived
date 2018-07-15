@@ -9,14 +9,22 @@
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{ profile_pic.url }}" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">{{ fullname }} <a data-toggle="tooltip" title="Edit Profile"><i
-                                class="fas fa-pencil-alt"></i></a></h5>
+                        <h5 class="card-title">{{ fullname }}
+                            {% if request.user == user %}
+                                <a data-toggle="tooltip" title="Edit Profile"><i class="fas fa-pencil-alt"></i></a>
+                            {% endif %}
+                        </h5>
+                        <p class="card-text">@{{ username }}</p>
                         <p class="card-text">{{ location }}</p>
+                    {% if request.user != user  %}
+                    <button class="btn btn-primary">Follow</button>
+                    {% endif %}
+
                     </div>
                 </div>
             </div>
             <div class="col-8">
-            {{ fullname }}'s showpieces:
+                {{ fullname }}'s showpieces:
                 {% for blog in blogs %}
                     <div class="card w-100">
                         <div class="card-body">
