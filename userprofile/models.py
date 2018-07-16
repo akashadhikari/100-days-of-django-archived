@@ -30,9 +30,9 @@ def save_user_profile(sender, instance, **kwargs):
 
 
 class FollowUser(models.Model):
-    following = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='following')
+    following = models.ForeignKey(User, on_delete=models.CASCADE, related_name='following')
     is_following = models.BooleanField(default=False)
-    followed_by = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='followed_by')
+    followed_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='followed_by')
 
     def __str__(self):
         if self.is_following:

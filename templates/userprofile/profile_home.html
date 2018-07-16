@@ -17,8 +17,9 @@
                         <p class="card-text">@{{ username }}</p>
                         <p class="card-text">{{ location }}</p>
                     {% if request.user != user  %}
-                    <button class="btn btn-primary">Follow</button>
+                    <a href="{% url "profile:follow" username=username %}"><button class="btn btn-primary">Follow</button></a>
                     {% endif %}
+                    {{ followers_count }}
 
                     </div>
                 </div>

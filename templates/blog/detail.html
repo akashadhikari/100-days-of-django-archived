@@ -75,7 +75,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    {% for liker in likers_list %}
+                                    {% for liker in likers %}
                                         <h5><a href="{% url 'profile:profile' username=liker %}">{{ liker }}</a></h5>
                                         <hr>
                                     {% endfor %}
