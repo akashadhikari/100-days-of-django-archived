@@ -12,8 +12,12 @@ def profile_page(request, username):
     last_login = user.last_login
     profile_pic = user.profile.profile_pic
     location = user.profile.location
-    followers_count = 2 # FollowUser.objects.filter(following=username).count()
-    # follower = FollowUser.objects.filter(following=user[4]).filter(followed_by=request.user).first().followed_by.username
+    followers_count = FollowUser.objects.filter(following=user).count()
+    qs = FollowUser.objects.filter(following=user).filter(followed_by=request.user)
+    if qs.count() == 1:
+        follow_status = qs.first().is_following
+    else:
+        follow_status = False
 
     context = {
         'user': user,
@@ -24,11 +28,13 @@ def profile_page(request, username):
         'profile_pic': profile_pic,
         'location': location,
         'followers_count': followers_count,
+        'follow_status': follow_status,
 
     }
     return render(request, "userprofile/profile_home.html", context)
 
 
 def follow_user(request, username):
-    FollowUser.objects.create(following=username, followed_by=request.user, is_following=True)
-    return redirect(reverse('profile:profile'))
+    user = get_object_or_404(User, username=username)
+    FollowUser.objects.create(following=user, followed_by=request.user, is_following=True)
+    return redirect(reverse('profile:profile', kwargs={'username': username}))
