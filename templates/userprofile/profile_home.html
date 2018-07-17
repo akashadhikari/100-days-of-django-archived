@@ -21,11 +21,11 @@
                             {% if follow_status %}
                                 You are following @{{ username }}
                                 <a href="{% url "profile:unfollow" username=username %}">
-                                    <button class="btn btn-primary">Unfollow</button>
+                                    <button class="btn btn-danger">Unfollow</button>
                                 </a>
                             {% else %}
                                 <a href="{% url "profile:follow" username=username %}">
-                                    <button class="btn btn-primary">Follow</button>
+                                    <button class="btn btn-success">Follow</button>
                                 </a>
                             {% endif %}
                         {% endif %}
