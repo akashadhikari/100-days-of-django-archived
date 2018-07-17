@@ -13,6 +13,7 @@ def profile_page(request, username):
     profile_pic = user.profile.profile_pic
     location = user.profile.location
     followers_count = FollowUser.objects.filter(following=user).count()
+    following_count = FollowUser.objects.filter(followed_by=user).count()
     qs = FollowUser.objects.filter(following=user).filter(followed_by=request.user)
     if qs.count() == 1:
         follow_status = qs.first().is_following
@@ -28,6 +29,7 @@ def profile_page(request, username):
         'profile_pic': profile_pic,
         'location': location,
         'followers_count': followers_count,
+        'following_count': following_count,
         'follow_status': follow_status,
 
     }
@@ -37,4 +39,10 @@ def profile_page(request, username):
 def follow_user(request, username):
     user = get_object_or_404(User, username=username)
     FollowUser.objects.create(following=user, followed_by=request.user, is_following=True)
+    return redirect(reverse('profile:profile', kwargs={'username': username}))
+
+
+def unfollow_user(request, username):
+    user = get_object_or_404(User, username=username)
+    FollowUser.objects.filter(following=user).filter(followed_by=request.user).first().delete()
     return redirect(reverse('profile:profile', kwargs={'username': username}))

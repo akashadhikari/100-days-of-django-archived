@@ -16,10 +16,13 @@
                         </h5>
                         <p class="card-text">@{{ username }}</p>
                         <p class="card-text">{{ location }}</p>
-                        <p class="card-text">Followers: {{ followers_count }}</p>
+                        <p class="card-text">Followers: {{ followers_count }} | Following: {{ following_count }}</p>
                         {% if request.user != user %}
                             {% if follow_status %}
                                 You are following @{{ username }}
+                                <a href="{% url "profile:unfollow" username=username %}">
+                                    <button class="btn btn-primary">Unfollow</button>
+                                </a>
                             {% else %}
                                 <a href="{% url "profile:follow" username=username %}">
                                     <button class="btn btn-primary">Follow</button>
