@@ -37,7 +37,12 @@ def blog_create(request):
 def blog_detail(request, pk):
     blog = get_object_or_404(Blog, id=pk)
     page_title = blog.title + '- TheShelve'
-    author = blog.author.first_name + " " + blog.author.last_name
+    if blog.author:
+        author = blog.author.first_name + " " + blog.author.last_name
+        blog_author = True
+    else:
+        author = "A user"
+        blog_author = False
     if request.user.is_authenticated:
         like = Like.objects.filter(blog=pk).filter(user=request.user).first()
         like_count = Like.objects.filter(blog=pk).count()
@@ -53,7 +58,8 @@ def blog_detail(request, pk):
         'author': author,
         'like': like,
         'like_count': like_count,
-        'likers': likers
+        'likers': likers,
+        'blog_author': blog_author
     }
 
     return render(request, "blog/detail.html", context)
