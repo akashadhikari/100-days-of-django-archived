@@ -14,11 +14,14 @@ def profile_page(request, username):
     location = user.profile.location
     followers_count = FollowUser.objects.filter(following=user).count()
     following_count = FollowUser.objects.filter(followed_by=user).count()
-    qs = FollowUser.objects.filter(following=user).filter(followed_by=request.user)
-    if qs.count() == 1:
-        follow_status = qs.first().is_following
+    if request.user.is_authenticated:
+        qs = FollowUser.objects.filter(following=user).filter(followed_by=request.user)
+        if qs.count == 1:
+            follow_status = qs.first().is_following
+        else:
+            follow_status = False
     else:
-        follow_status = False
+        qs, follow_status = None, False
 
     context = {
         'user': user,
