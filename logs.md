@@ -78,9 +78,19 @@
 
 **Thoughts** : And yes, today was the day! Both follow and unfollow stuff were done. We can move on to some OTHER stuff now! Bear with me.
 
-## Day 9: July 17, 2018
+## Day 9: July 18, 2018
 
 **Today I learned** :
 - Minor Bug fixes 
 
 **Thoughts** : Fixing a bug can be an intimidating process. I found that Django was throwing an error while trying to display the the profile to an unauthenticated user. This was later solved. I am not going to fix the 'Follow' and 'Profile' bugs anymore because there ain't none (hopefully). Ok, we will start big things tomorrow.
+
+
+## Day 10: July 19, 2018
+
+**Today I learned** :
+- Case study of School Management System
+
+**Thoughts** : SMS systems can range from a simple application to a complex architecture. Today, I did a small case study on such SMS systems. I will be studying more regarding this system in the days to come.
+
+![10per](https://raw.githubusercontent.com/akashadhikari/100-days-of-ML/master/src/scratch/images/10perdjango.png)
