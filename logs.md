@@ -94,3 +94,10 @@
 **Thoughts** : SMS systems can range from a simple application to a complex architecture. Today, I did a small case study on such SMS systems. I will be studying more regarding this system in the days to come.
 
 ![10per](https://raw.githubusercontent.com/akashadhikari/100-days-of-ML/master/src/scratch/images/10perdjango.png)
+
+## Day 11: July 20, 2018
+
+**Today I learned** :
+- SMS System design architecture
+
+**Thoughts** : No hands-on code. Only the surfacial study of SMS system was done. Meanwhile, this overall event can come to a halt because of work issues. But, I will try my best to let it not happen.
