@@ -101,3 +101,11 @@
 - SMS System design architecture
 
 **Thoughts** : No hands-on code. Only the surfacial study of SMS system was done. Meanwhile, this overall event can come to a halt because of work issues. But, I will try my best to let it not happen.
+
+## Day 12: July 21, 2018
+
+**Today I learned** :
+- Various Queryset
+- Django + JS Chart basics
+
+**Thoughts** : Some queryset performance was monitored. On the other hand, some study were in JS Chart Frameworks such as HighCharts, d3js, etc.
