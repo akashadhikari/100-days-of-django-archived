@@ -109,3 +109,10 @@
 - Django + JS Chart basics
 
 **Thoughts** : Some queryset performance was monitored. On the other hand, some study were in JS Chart Frameworks such as HighCharts, d3js, etc.
+
+## Day 13: July 22, 2018
+
+**Today I learned** :
+- Some miscellaneous frontend layout.
+
+**Thoughts** : Some frontend layout stuff was done.
