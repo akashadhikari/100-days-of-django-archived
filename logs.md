@@ -116,3 +116,7 @@
 - Some miscellaneous frontend layout.
 
 **Thoughts** : Some frontend layout stuff was done.
+
+## No Work Day (14)
+** Have some other stuff all day long. Next day will be counted as Day 14 **
+
