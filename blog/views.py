@@ -37,7 +37,7 @@ def blog_create(request):
 def blog_detail(request, pk):
     blog = get_object_or_404(Blog, id=pk)
     page_title = blog.title + '- TheShelve'
-    if blog.author:
+    if blog.__dict__.get('author'):
         author = blog.author.first_name + " " + blog.author.last_name
         blog_author = True
     else:
@@ -84,7 +84,8 @@ def blog_edit(request, pk):
 
 def blog_delete(request, pk):
     blog = get_object_or_404(Blog, id=pk)
-    blog.delete()
+    if request.user.is_authenticated:
+        blog.delete()
     return redirect(reverse('blog:list'))
 
 
