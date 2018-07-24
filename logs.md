@@ -120,3 +120,10 @@
 ## No Work Day (14)
 ** Have some other stuff all day long. Next day will be counted as Day 14 **
 
+## Day 14: July 24, 2018
+
+**Today I learned** :
+- Minor bug fixes described below
+
+**Thoughts** : Blog author name exception, unique together fields for FollowUser model and Delete user auth check was done.
+
