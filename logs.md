@@ -125,5 +125,14 @@
 **Today I learned** :
 - Minor bug fixes described below
 
-**Thoughts** : Blog author name exception, unique together fields for FollowUser model and Delete user auth check was done.
+**Thoughts** : Blog author name exception, unique together fields for FollowUser model and Delete user auth check was 
+done.
 
+## Day 15: July 24 2018
+
+**Today I learned** :
+- Fixed Follow bug resulted by `count()`
+
+**Thoughts** : After following a user, the template was not rendering the Unfollow button and I managed to figure out 
+why. Turns out, I wasn't calling the `count` method and setting the condition of returning 1. Some parentheses aren't
+just **small**.
