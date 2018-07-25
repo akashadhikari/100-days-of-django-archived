@@ -16,7 +16,7 @@ def profile_page(request, username):
     following_count = FollowUser.objects.filter(followed_by=user).count()
     if request.user.is_authenticated:
         qs = FollowUser.objects.filter(following=user).filter(followed_by=request.user)
-        if qs.count == 1:
+        if qs.count() == 1:
             follow_status = qs.first().is_following
         else:
             follow_status = False
