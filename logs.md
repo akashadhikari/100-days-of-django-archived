@@ -128,7 +128,7 @@
 **Thoughts** : Blog author name exception, unique together fields for FollowUser model and Delete user auth check was 
 done.
 
-## Day 15: July 24 2018
+## Day 15: July 25 2018
 
 **Today I learned** :
 - Fixed Follow bug resulted by `count()`
