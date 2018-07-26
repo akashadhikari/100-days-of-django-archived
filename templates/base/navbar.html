@@ -1,7 +1,7 @@
 {% url 'blog:list' as blogs_list %}
 {% url 'blog:create' as blog_create %}
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; ">
-    <a class="navbar-brand" href="{% url 'blog:list' %}">TheShelve</a>
+    <a class="navbar-brand" href="{% url 'blog:list' %}">Snippcode</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
         <ul class="navbar-nav mr-auto">
             {% if request.user.is_authenticated %}
             <li class="nav-item {% if request.path == blog_create %} active {% endif %}">
-                <a class="nav-link" href="{% url 'blog:create' %}"><i class="fas fa-pencil-alt"></i> New Showpiece</a>
+                <a class="nav-link" href="{% url 'blog:create' %}"><i class="fas fa-pencil-alt"></i> New Snippcode</a>
             </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

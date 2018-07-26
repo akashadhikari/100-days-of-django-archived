@@ -10,7 +10,7 @@ from .forms import BlogForm
 def blogs_list(request):
     blogs = Blog.objects.all().order_by('-id')
     context = {
-        "page_title": "TheShelve",
+        "page_title": "Snippcode",
         "blogs": blogs,
     }
     return render(request, "blog/list.html", context)
@@ -20,7 +20,7 @@ def blog_create(request):
     blog_form = BlogForm(request.POST or None)
 
     context = {
-        "page_title": "New Showpiece - TheShelve",
+        "page_title": "New Snippcode - Snippcode",
         "form": blog_form,
     }
     if blog_form.is_valid():
@@ -36,7 +36,7 @@ def blog_create(request):
 
 def blog_detail(request, pk):
     blog = get_object_or_404(Blog, id=pk)
-    page_title = blog.title + '- TheShelve'
+    page_title = blog.title + '- Snippcode'
     if blog.__dict__.get('author'):
         author = blog.author.first_name + " " + blog.author.last_name
         blog_author = True
@@ -70,7 +70,7 @@ def blog_edit(request, pk):
     edit_form = BlogForm(request.POST or None, initial={'title': blog.title, 'content': blog.body})
     context = {
         'form': edit_form,
-        'page_title': 'Edit Showpiece - TheShelve'
+        'page_title': 'Edit Snippcode - Snippcode'
     }
     if edit_form.is_valid():
         title = request.POST.get('title')

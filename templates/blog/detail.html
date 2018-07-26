@@ -57,7 +57,7 @@
                     </div>
 
                 </h5>
-                <p class="card-text">{{ blog.body }}</p>
+                <p class="card-text">{{ blog.body|safe }}</p>
                 <hr>
                 <p>Posted about {{ blog.created_at }}</p>
                 <p><i class="fas fa-eye"></i> Views: 20</p>

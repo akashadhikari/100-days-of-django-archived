@@ -13,7 +13,7 @@ def login_page(request):
     login_form = LoginForm(request.POST or None)
     context = {
         'login_form': login_form,
-        'page_title': 'Login - TheShelve'
+        'page_title': 'Login - Snippcode'
     }
     if login_form.is_valid():
         username = request.POST['username']
