@@ -40,7 +40,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><a href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title }}</a>
                             </h5>
-                            <p class="card-text">{{ blog.body }}</p>
+                            <p class="card-text">{{ blog.body|safe }}</p>
                         </div>
                     </div>
                 {% endfor %}

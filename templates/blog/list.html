@@ -17,6 +17,7 @@
                             {% if blog.author %} href="{% url 'profile:profile' username=blog.author %} {% endif %} "
                             style="font-size: 12px">by: {{ blog.author }}</a></h5>
                     <p class="card-text">{{ blog.body|safe }}</p>
+
                 </div>
             </div>
         {% endfor %}
