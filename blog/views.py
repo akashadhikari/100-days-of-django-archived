@@ -25,8 +25,9 @@ def blog_create(request):
     }
     if blog_form.is_valid():
         title = request.POST.get('title')
+        code_description = request.POST.get('code_description')
         body = request.POST.get('content')
-        new_blog = Blog.objects.create(title=title, body=body)
+        new_blog = Blog.objects.create(title=title, code_description=code_description, body=body)
         new_blog.author = request.user
         new_blog.save()
     if request.method == 'POST':
@@ -67,15 +68,18 @@ def blog_detail(request, pk):
 
 def blog_edit(request, pk):
     blog = get_object_or_404(Blog, id=pk)
-    edit_form = BlogForm(request.POST or None, initial={'title': blog.title, 'content': blog.body})
+    edit_form = BlogForm(request.POST or None, initial={'title': blog.title,
+                                                        'code_description':blog.code_description,
+                                                        'content': blog.body})
     context = {
         'form': edit_form,
         'page_title': 'Edit Snippcode - Snippcode'
     }
     if edit_form.is_valid():
         title = request.POST.get('title')
+        code_description = request.POST.get('code_description')
         body = request.POST.get('content')
-        Blog.objects.filter(id=pk).update(title=title, body=body)
+        Blog.objects.filter(id=pk).update(title=title, code_description=code_description, body=body)
     if request.method == 'POST':
         return redirect(reverse('blog:detail', kwargs={'pk': blog.id}))
 

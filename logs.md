@@ -136,3 +136,14 @@ done.
 **Thoughts** : After following a user, the template was not rendering the Unfollow button and I managed to figure out 
 why. Turns out, I wasn't calling the `count` method and setting the condition of returning 1. Some parentheses aren't
 just **small**.
+
+## Day 16: July 26 2018
+
+**Today I learned** :
+- Tinymce integration
+- Code snippet highlight
+- Personal CDN
+
+**Thoughts** : Wow! Ok, I have found some known bugs. I also have to make a comment section and other stuff but the
+important part was covered (well, at least in Django Admin). Now, the system accepts code/text snippets and highhlights
+them according to the language. It's a win!

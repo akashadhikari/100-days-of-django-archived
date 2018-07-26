@@ -9,6 +9,7 @@ from tinymce import models as tinymce_models
 
 class Blog(models.Model):
     title = models.CharField(max_length=255)
+    code_description = models.TextField(max_length=1000, null=True, blank=True)
     body = tinymce_models.HTMLField()
     author = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)

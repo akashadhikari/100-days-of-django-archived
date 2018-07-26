@@ -16,7 +16,7 @@
                     <h5 class="card-title"><a href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title }}</a> | <a
                             {% if blog.author %} href="{% url 'profile:profile' username=blog.author %} {% endif %} "
                             style="font-size: 12px">by: {{ blog.author }}</a></h5>
-                    <p class="card-text">{{ blog.body|safe }}</p>
+                    <p class="card-text">{{ blog.code_description }}</p>
 
                 </div>
             </div>
