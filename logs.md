@@ -149,3 +149,13 @@ just **small**.
 **Thoughts** : Wow! Ok, I have found some known bugs. I also have to make a comment section and other stuff but the
 important part was covered (well, at least in Django Admin). Now, the system accepts code/text snippets and highhlights
 them according to the language. It's a win!
+
+## Day 17: July 27 2018
+
+**Today I learned** :
+- Add snippet from form (raw code)
+- Jaqen H'gar mode: Guest user : No one!
+- Enhance profile info.
+
+**Thoughts** : I included snippet pasting feature from the frontend but with the raw code (no wysiwyg). Also, the feature of "guest user" or Jaqen H'gar mode was included :laughing: . Lastly, some enhancement on profile info (total snipps count, likes count etc) to wrap it up for today.
+
