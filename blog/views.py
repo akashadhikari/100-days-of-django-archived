@@ -17,10 +17,13 @@ def blogs_list(request):
 
 
 def blog_create(request):
-    blog_form = BlogForm(request.POST or None)
+    init = """<pre class="language-python"><code>
+    
+</code></pre>"""
+    blog_form = BlogForm(request.POST or None, initial={'content':init})
 
     context = {
-        "page_title": "New Snippcode - Snippcode",
+        "page_title": "New Snippcode",
         "form": blog_form,
     }
     if blog_form.is_valid():
@@ -30,15 +33,15 @@ def blog_create(request):
         new_blog = Blog.objects.create(title=title, code_description=code_description, body=body)
         new_blog.author = request.user
         new_blog.save()
-    if request.method == 'POST':
-        return redirect(reverse('blog:detail', kwargs={'pk': Blog.objects.last().id}))
+        if request.method == 'POST':
+            return redirect(reverse('blog:detail', kwargs={'pk': Blog.objects.last().id}))
     return render(request, "blog/create.html", context)
 
 
 def blog_detail(request, pk):
     blog = get_object_or_404(Blog, id=pk)
     page_title = blog.title + '- Snippcode'
-    if blog.__dict__.get('author'):
+    if blog.author.__dict__.get('first_name'):
         author = blog.author.first_name + " " + blog.author.last_name
         blog_author = True
     else:
