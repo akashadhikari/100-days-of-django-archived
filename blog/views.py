@@ -31,7 +31,8 @@ def blog_create(request):
         code_description = request.POST.get('code_description')
         body = request.POST.get('content')
         new_blog = Blog.objects.create(title=title, code_description=code_description, body=body)
-        new_blog.author = request.user
+        if request.user.is_authenticated:
+            new_blog.author = request.user
         new_blog.save()
         if request.method == 'POST':
             return redirect(reverse('blog:detail', kwargs={'pk': Blog.objects.last().id}))
@@ -41,11 +42,11 @@ def blog_create(request):
 def blog_detail(request, pk):
     blog = get_object_or_404(Blog, id=pk)
     page_title = blog.title + '- Snippcode'
-    if blog.author.__dict__.get('first_name'):
+    if blog.author:
         author = blog.author.first_name + " " + blog.author.last_name
         blog_author = True
     else:
-        author = "A user"
+        author = "Jaqen H'ghar"
         blog_author = False
     if request.user.is_authenticated:
         like = Like.objects.filter(blog=pk).filter(user=request.user).first()
