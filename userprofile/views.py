@@ -2,16 +2,16 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.models import User
 
 from .models import FollowUser
-from blog.models import Blog
+from blog.models import Blog, Like
 
 
 def profile_page(request, username):
     user = get_object_or_404(User, username=username)
-    blogs = Blog.objects.filter(author=user)
+    blogs = Blog.objects.filter(author=user).order_by('-created_at')
+    blogs_count = blogs.count()
     full_name = user.first_name + " " + user.last_name
     last_login = user.last_login
-    profile_pic = user.profile.profile_pic
-    location = user.profile.location
+    likes_count = Like.objects.filter(user=user).count()
     followers_count = FollowUser.objects.filter(following=user).count()
     following_count = FollowUser.objects.filter(followed_by=user).count()
     if request.user.is_authenticated:
@@ -26,11 +26,11 @@ def profile_page(request, username):
     context = {
         'user': user,
         'blogs': blogs,
+        'blogs_count': blogs_count,
         'fullname': full_name,
         'username': username,
         'last_login': last_login,
-        'profile_pic': profile_pic,
-        'location': location,
+        'likes_count': likes_count,
         'followers_count': followers_count,
         'following_count': following_count,
         'follow_status': follow_status,

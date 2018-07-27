@@ -46,7 +46,7 @@ def blog_detail(request, pk):
         author = blog.author.first_name + " " + blog.author.last_name
         blog_author = True
     else:
-        author = "Jaqen H'ghar"
+        author = "A man has no name."
         blog_author = False
     if request.user.is_authenticated:
         like = Like.objects.filter(blog=pk).filter(user=request.user).first()

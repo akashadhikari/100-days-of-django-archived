@@ -8,7 +8,7 @@
                 <h5 class="card-title">
                     <div class="row">
                         <div class="col">
-                            <p>By: <a {% if blog_author %}
+                            <p>Author: <a {% if blog_author %}
                                 href="{% url 'profile:profile' username=blog.author %}" {% else %}{% endif %}>{{ author }}
                             </a></p>
                             <hr>

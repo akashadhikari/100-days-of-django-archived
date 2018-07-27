@@ -13,9 +13,16 @@
         {% for blog in blogs %}
             <div class="card w-100">
                 <div class="card-body">
-                    <h5 class="card-title"><a href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title }}</a> | <a
-                            {% if blog.author %} href="{% url 'profile:profile' username=blog.author %} {% endif %} "
-                            style="font-size: 12px">by: {{ blog.author }}</a></h5>
+                    <h5 class="card-title"><a href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title }}</a> |
+                        {% if blog.author %}
+                        <a href="{% url 'profile:profile' username=blog.author %}"
+                            style="font-size: 12px">by: {{ blog.author }}
+                        </a>
+                            {% else %}
+                            <a style="font-size: 12px">by: Jaqen H'gar </a>
+                        </a>
+                        {% endif %}
+                    </h5>
                     <p class="card-text">{{ blog.code_description }}</p>
 
                 </div>

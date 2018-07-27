@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{ profile_pic.url }}" alt="Card image cap">
+                    <img class="card-img-top" src="{{ user.profile.profile_pic.url }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ fullname }}
                             {% if request.user == user %}
@@ -15,7 +15,7 @@
                             {% endif %}
                         </h5>
                         <p class="card-text">@{{ username }}</p>
-                        <p class="card-text">{{ location }}</p>
+                        <p class="card-text">{{ user.profile.location }}</p>
                         <p class="card-text">Followers: {{ followers_count }} | Following: {{ following_count }}</p>
                         {% if request.user != user and request.user.is_authenticated %}
                             {% if follow_status %}
@@ -29,6 +29,8 @@
                                 </a>
                             {% endif %}
                         {% endif %}
+                        <p class="card-text">Snipps: {{ blogs_count }} </p>
+                        <p class="card-text">Likes: {{ likes_count }} </p>
 
                     </div>
                 </div>
