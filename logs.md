@@ -17,7 +17,7 @@
 - Basic user login and logout
 - User authentication.
 
-**Thoughts** : Basic user login is a cool. But maintaining permissions will be more crazier, which I might cover shortly.
+**Thoughts** : Basic user login is cool. But maintaining permissions will be more crazier, which I might cover shortly.
 
 ## Day 2 : July 11 , 2018
  
@@ -127,7 +127,9 @@
 
 **Thoughts** : Blog author name exception, unique together fields for FollowUser model and Delete user auth check was 
 done.
-``
+
+# WEEK 2 STARTS
+
 ## Day 15: July 25 2018
 
 **Today I learned** :
