@@ -159,3 +159,11 @@ them according to the language. It's a win!
 
 **Thoughts** : I included snippet pasting feature from the frontend but with the raw code (no wysiwyg). Also, the feature of "guest user" or Jaqen H'gar mode was included :laughing: . Lastly, some enhancement on profile info (total snipps count, likes count etc) to wrap it up for today.
 
+## Day 18: July 28 2018
+
+**Today I learned** :
+- Page hits counter
+- Individual profile based snipp hits view count (use of annotation)
+- Searching according to title, description and code.
+
+**Thoughts** : Done some cool things like Page hits counter (based on session) and searching (based on snipp title, description and code).
