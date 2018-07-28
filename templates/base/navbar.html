@@ -12,7 +12,7 @@
             <li class="nav-item {% if request.path == blog_create %} active {% endif %}">
                 <a class="nav-link" href="{% url 'blog:create' %}"><i class="fas fa-pencil-alt"></i> New Snippcode</a>
             </li>
-        {% if request.user.is_authenticated %}
+            {% if request.user.is_authenticated %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown"
@@ -20,7 +20,8 @@
                         {{ request.user.first_name }} {{ request.user.last_name }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'profile:profile' username=request.user.username %}"><i class="fas fa-user"></i> My Profile</a>
+                        <a class="dropdown-item" href="{% url 'profile:profile' username=request.user.username %}"><i
+                                class="fas fa-user"></i> My Profile</a>
                         <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'userauth:logout' %}">
@@ -37,9 +38,6 @@
                 </li>
             {% endif %}
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        {% include 'search/form.html' %}
     </div>
 </nav>

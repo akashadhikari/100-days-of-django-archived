@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <br>
+                <h1>Search Result {{ request.GET.q }}.</h1>
+                <br>
+            </div>
+        </div>
+
+{% include 'search/form.html' %}
+
+        {% for blog in blogs %}
+            <div class="card w-100">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title }}</a> |
+                        {% if blog.author %}
+                        <a href="{% url 'profile:profile' username=blog.author %}"
+                            style="font-size: 12px">{{ blog.created_at|naturaltime }} by: {{ blog.author }}
+                        </a>
+                            {% else %}
+                            <a style="font-size: 12px">{{ blog.created_at|naturaltime }} by: Jaqen H'gar </a>
+                        </a>
+                        {% endif %}
+                    </h5>
+                    <p class="card-text">{{ blog.code_description }}</p>
+
+                </div>
+            </div>
+        {% endfor %}
+        {{ login_form }}
+    </div>
+{% endblock %}
