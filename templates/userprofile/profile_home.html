@@ -19,18 +19,19 @@
                         <p class="card-text">Followers: {{ followers_count }} | Following: {{ following_count }}</p>
                         {% if request.user != user and request.user.is_authenticated %}
                             {% if follow_status %}
-                                You are following @{{ username }}
-                                <a href="{% url "profile:unfollow" username=username %}">
+                                <p>You are following @{{ username }}</p>
+                                <p><a href="{% url "profile:unfollow" username=username %}">
                                     <button class="btn btn-danger">Unfollow</button>
-                                </a>
+                                </a></p>
                             {% else %}
-                                <a href="{% url "profile:follow" username=username %}">
+                                <p><a href="{% url "profile:follow" username=username %}">
                                     <button class="btn btn-success">Follow</button>
-                                </a>
+                                </a></p>
                             {% endif %}
                         {% endif %}
                         <p class="card-text">Snipps: {{ blogs_count }} </p>
                         <p class="card-text">Likes: {{ likes_count }} </p>
+                        <p><i class="fas fa-eye"></i> Views: {{ final_likes_count }}</p>
 
                     </div>
                 </div>

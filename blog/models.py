@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -17,6 +18,16 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class BlogView(models.Model):
+    blog = models.ForeignKey(Blog, related_name='blog_views', on_delete=models.CASCADE)
+    ip = models.CharField(max_length=40, null=True, blank=True)
+    session = models.CharField(max_length=40, null=True, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.blog.title
 
 
 class Comment(models.Model):

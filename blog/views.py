@@ -1,7 +1,9 @@
-from django.core.exceptions import ObjectDoesNotExist
+import datetime
+
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 
-from .models import Blog, Like
+from .models import Blog, Like, BlogView
 from .forms import BlogForm
 
 # Create your views here.
@@ -42,12 +44,15 @@ def blog_create(request):
 def blog_detail(request, pk):
     blog = get_object_or_404(Blog, id=pk)
     page_title = blog.title + '- Snippcode'
+
     if blog.author:
         author = blog.author.first_name + " " + blog.author.last_name
         blog_author = True
+
     else:
         author = "A man has no name."
         blog_author = False
+
     if request.user.is_authenticated:
         like = Like.objects.filter(blog=pk).filter(user=request.user).first()
         like_count = Like.objects.filter(blog=pk).count()
@@ -57,8 +62,20 @@ def blog_detail(request, pk):
         like = ''
         like_count = ''
         likers = ''
+
+    # Count views
+
+    # if not ORM filter (blog, session)
+
+    view = BlogView(blog=blog,
+                    ip=request.META['REMOTE_ADDR'],
+                    created=datetime.datetime.now(),
+                    session=request.session.session_key)
+    view.save()
+
     context = {
         'blog': blog,
+        'view_count': BlogView.objects.filter(blog=blog).count(),
         'page_title': page_title,
         'author': author,
         'like': like,

@@ -62,7 +62,7 @@
                 <p class="card-text">{{ blog.body|safe }}</p>
                 <hr>
                 <p>Posted: {{ blog.created_at|naturaltime }}</p>
-                <p><i class="fas fa-eye"></i> Views: 20</p>
+                <p><i class="fas fa-eye"></i> Views: {{ view_count }}</p>
                 {% if request.user.is_authenticated %}
                     <a data-toggle="modal" data-target="#likedByThesePeople" href="#">{{ like_count }}
                         {% if like_count == 1 %}like{% else %}likes{% endif %}</a>.
