@@ -6,12 +6,12 @@
         <div class="row">
             <div class="col">
                 <br>
-                <h1>Search Result {{ request.GET.q }}.</h1>
+                <h1>Search Result for " {{ request.GET.q }} ".</h1>
                 <br>
             </div>
         </div>
 
-{% include 'search/form.html' %}
+{% include 'search/form.html' %}<br>
 
         {% for blog in blogs %}
             <div class="card w-100">
