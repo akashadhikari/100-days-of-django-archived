@@ -147,7 +147,10 @@
 
                         </div>
                         <div class="col">
-
+                            <a href="{% url "profile:profile" username=comment.author.username %}">
+                                {{ comment.author.first_name }} {{ comment.author.last_name }}
+                            </a>
+                            <a style="font-size: 10px">{{ comment.created_at|naturaltime }}</a>
                             <p>{{ comment|safe }}</p>
 
                         </div>

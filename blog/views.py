@@ -80,7 +80,7 @@ def blog_detail(request, pk):
         Comment.objects.create(parent_blog=blog, comment=comment, author=author)
         if request.method == 'POST':
             return redirect(reverse('blog:detail', kwargs={'pk': pk}))
-    comments = Comment.objects.filter(parent_blog=blog)
+    comments = Comment.objects.filter(parent_blog=blog).order_by('-created_at')
 
     context = {
         'blog': blog,
