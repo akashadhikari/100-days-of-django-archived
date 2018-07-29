@@ -167,3 +167,13 @@ them according to the language. It's a win!
 - Searching according to title, description and code.
 
 **Thoughts** : Done some cool things like Page hits counter (based on session) and searching (based on snipp title, description and code).
+
+## Day 19: July 29 2018
+
+**Today I learned** :
+- Comments on the post
+- Code snippet info on modal
+- Form validations
+
+**Thoughts** : One of the most important tasks has been achieved. The functionality of adding user comments is done.
+User can also paste the snippet in the comment. Also, a help-modal was generated for snippet help.
