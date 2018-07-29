@@ -174,6 +174,8 @@ them according to the language. It's a win!
 - Comments on the post
 - Code snippet info on modal
 - Form validations
+- Add footer and manage layouts.
 
 **Thoughts** : One of the most important tasks has been achieved. The functionality of adding user comments is done.
-User can also paste the snippet in the comment. Also, a help-modal was generated for snippet help.
+User can also paste the snippet in the comment. Also, a help-modal was generated for snippet help. The historic task of
+adding footer was also done. :p
