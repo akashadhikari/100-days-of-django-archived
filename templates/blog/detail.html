@@ -59,7 +59,7 @@
 
                 </h5>
 
-                <p class="alert alert-primary" role="alert">{{ blog.code_description }}</p>
+                <p class="alert alert-success">{{ blog.code_description }}</p>
                 <p class="card-text">{{ blog.body|safe }}</p>
                 <hr>
                 <p>Posted: {{ blog.created_at|naturaltime }}</p>
@@ -134,29 +134,38 @@
 
                 {% endif %}
 
-
+                <hr>
                 <br>
 
-                {% for comment in comments %}
+                {% if comments %}
 
-                    <div class="row">
-                        <div class="col-md-1">
-                            <a href="{% url "profile:profile" username=comment.author.username %}">
-                                <img class="card-img-top" src="{{ comment.author.profile.profile_pic.url }}" alt="DP">
-                            </a>
 
+                    {% for comment in comments %}
+
+                        <div class="row">
+                            <div class="col-md-1">
+                                <a href="{% url "profile:profile" username=comment.author.username %}">
+                                    <img class="card-img-top" src="{{ comment.author.profile.profile_pic.url }}"
+                                         alt="DP">
+                                </a>
+
+                            </div>
+                            <div class="col">
+                                <a href="{% url "profile:profile" username=comment.author.username %}">
+                                    {{ comment.author.first_name }} {{ comment.author.last_name }}
+                                </a>
+                                <a style="font-size: 10px">{{ comment.created_at|naturaltime }}</a>
+                                <p>{{ comment|safe }}</p>
+
+                            </div>
                         </div>
-                        <div class="col">
-                            <a href="{% url "profile:profile" username=comment.author.username %}">
-                                {{ comment.author.first_name }} {{ comment.author.last_name }}
-                            </a>
-                            <a style="font-size: 10px">{{ comment.created_at|naturaltime }}</a>
-                            <p>{{ comment|safe }}</p>
 
-                        </div>
-                    </div>
 
-                {% endfor %}
+
+                    {% endfor %}
+                {% else %}
+                    No comments yet.
+                {% endif %}
 
             </div>
         </div>

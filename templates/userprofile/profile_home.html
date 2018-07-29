@@ -43,7 +43,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><a href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title }}</a>
                             </h5>
-                            <p class="alert alert-primary" role="alert">{{ blog.code_description }}</p>
+                            <p class="alert alert-success">{{ blog.code_description }}</p>
                             <p class="card-text">{{ blog.body|safe }}</p>
                         </div>
                     </div>

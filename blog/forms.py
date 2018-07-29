@@ -26,7 +26,7 @@ class BlogForm(forms.Form):
 
 
 class CommentForm(forms.Form):
-    comment = forms.CharField(help_text='<b>You can create a code snippet inside <code> pre </code> tags</b>. '
+    comment = forms.CharField(help_text='<b>You can also create a code snippet inside <code> pre </code> tags</b>.<br>'
                                         '<a href="#" data-toggle="modal" data-target="#helpCodeModal">See Example</a>.',
                               widget=forms.Textarea(attrs={
         'class': 'form-control',
