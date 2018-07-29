@@ -9,8 +9,8 @@ from tinymce import models as tinymce_models
 
 
 class Blog(models.Model):
-    title = models.CharField(max_length=255)
-    code_description = models.TextField(max_length=1000, null=True, blank=True)
+    title = models.CharField(max_length=255, default="Untitled")
+    code_description = models.TextField(max_length=1000, null=True, blank=True, default="No description provided.")
     body = tinymce_models.HTMLField()
     author = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -31,7 +31,15 @@ class BlogView(models.Model):
 
 
 class Comment(models.Model):
-    pass
+    parent_blog = models.ForeignKey(Blog, related_name='comment_on', on_delete=models.CASCADE)
+    # comment = models.TextField(max_length=1000, null=True, blank=True)
+    comment = tinymce_models.HTMLField()
+    author = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.comment
 
 
 class Like(models.Model):

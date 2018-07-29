@@ -3,8 +3,8 @@ import datetime
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 
-from .models import Blog, Like, BlogView
-from .forms import BlogForm
+from .models import Blog, Like, BlogView, Comment
+from .forms import BlogForm, CommentForm
 
 # Create your views here.
 
@@ -20,7 +20,7 @@ def blogs_list(request):
 
 def blog_create(request):
     init = """<pre class="language-python"><code>
-    
+
 </code></pre>"""
     blog_form = BlogForm(request.POST or None, initial={'content':init})
 
@@ -73,6 +73,15 @@ def blog_detail(request, pk):
                     session=request.session.session_key)
     view.save()
 
+    comment_form = CommentForm(request.POST or None)
+    if comment_form.is_valid():
+        comment = request.POST.get('comment')
+        author = request.user
+        Comment.objects.create(parent_blog=blog, comment=comment, author=author)
+        if request.method == 'POST':
+            return redirect(reverse('blog:detail', kwargs={'pk': pk}))
+    comments = Comment.objects.filter(parent_blog=blog)
+
     context = {
         'blog': blog,
         'view_count': BlogView.objects.filter(blog=blog).count(),
@@ -81,7 +90,9 @@ def blog_detail(request, pk):
         'like': like,
         'like_count': like_count,
         'likers': likers,
-        'blog_author': blog_author
+        'blog_author': blog_author,
+        'comment_form': comment_form,
+        'comments': comments
     }
 
     return render(request, "blog/detail.html", context)
