@@ -8,7 +8,9 @@ class BlogForm(forms.Form):
     }))
     code_description = forms.CharField(widget=forms.Textarea(attrs={
         'class': 'form-control',
-        'placeholder': 'Describe what the code is doing'
+        'placeholder': 'Describe what the code is doing.',
+        'rows':4,
+        'cols': 15
     }))
     content = forms.CharField(help_text='<b>Place your code snippet in the blank region bounded by '
                                         '<code> code </code> tag. Change <code> class="language-python" </code> '

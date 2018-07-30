@@ -10,11 +10,26 @@ from .forms import BlogForm, CommentForm
 
 
 def blogs_list(request):
+    init = """<pre class="language-python"><code>
+
+</code></pre>"""
     blogs = Blog.objects.all().order_by('-id')
+    blog_form = BlogForm(request.POST or None, initial={'content': init})
     context = {
         "page_title": "Snippcode",
         "blogs": blogs,
+        "blog_form": blog_form
     }
+    if blog_form.is_valid():
+        title = request.POST.get('title')
+        code_description = request.POST.get('code_description')
+        body = request.POST.get('content')
+        new_blog = Blog.objects.create(title=title, code_description=code_description, body=body)
+        if request.user.is_authenticated:
+            new_blog.author = request.user
+        new_blog.save()
+        if request.method == 'POST':
+            return redirect(reverse('blog:detail', kwargs={'pk': Blog.objects.last().id}))
     return render(request, "blog/list.html", context)
 
 
