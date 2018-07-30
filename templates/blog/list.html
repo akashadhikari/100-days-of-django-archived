@@ -4,7 +4,7 @@
 {% block content %}
     <div class="container">
         <div class="row">
-        <div class="col-9">
+            <div class="col-9">
                 <br>
                 <h3>Add Quick Snippet.</h3>
                 <br>
@@ -15,32 +15,71 @@
                 </form>
 
             </div>
+
             <div class="col">
-                <br>
-                <h3>Recent Snippets.</h3>
-                <br>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                           style="width: 127px"
+                           aria-controls="home" aria-selected="true">Trending</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                           style="width: 127px"
+                           aria-controls="profile" aria-selected="false">Recent</a>
+                    </li>
 
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        {% for blog in blogs %}
+                            <div class="card w-100">
+                                <div class="card-body" style="height: 75px">
+                                    <h5 class="card-title"><a style="font-size: 15px"
+                                                              href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title|truncatechars:30 }}</a><br>
+                                        {% if blog.author %}
+                                            <a style="font-size: 12px">{{ blog.created_at|naturaltime }} by</a>
+                                            <a href="{% url 'profile:profile' username=blog.author %}"
+                                               style="font-size: 12px">
+                                                {% if request.user == blog.author %} you {% else %}
+                                                    {{ blog.author }}{% endif %}
+                                            </a>
+                                        {% else %}
+                                            <a style="font-size: 12px">{{ blog.created_at|naturaltime }} by: Jaqen
+                                                H'gar </a>
+                                            </a>
+                                        {% endif %}
+                                    </h5>
 
-                {% for blog in blogs %}
-                    <div class="card w-100">
-                        <div class="card-body" style="height: 75px">
-                            <h5 class="card-title"><a style="font-size: 15px"
-                                                      href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title|truncatechars:30 }}</a><br>
-                                {% if blog.author %}
-                                    <a style="font-size: 12px">{{ blog.created_at|naturaltime }} by</a>
-                                    <a href="{% url 'profile:profile' username=blog.author %}"
-                                       style="font-size: 12px">
-                                        {% if request.user == blog.author %} you {% else %} {{ blog.author }}{% endif %}
-                                    </a>
-                                {% else %}
-                                    <a style="font-size: 12px">{{ blog.created_at|naturaltime }} by: Jaqen H'gar </a>
-                                    </a>
-                                {% endif %}
-                            </h5>
-
-                        </div>
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
-                {% endfor %}
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        {% for blog in blogs %}
+                            <div class="card w-100">
+                                <div class="card-body" style="height: 75px">
+                                    <h5 class="card-title"><a style="font-size: 15px"
+                                                              href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title|truncatechars:30 }}</a><br>
+                                        {% if blog.author %}
+                                            <a style="font-size: 12px">{{ blog.created_at|naturaltime }} by</a>
+                                            <a href="{% url 'profile:profile' username=blog.author %}"
+                                               style="font-size: 12px">
+                                                {% if request.user == blog.author %} you {% else %}
+                                                    {{ blog.author }}{% endif %}
+                                            </a>
+                                        {% else %}
+                                            <a style="font-size: 12px">{{ blog.created_at|naturaltime }} by: Jaqen
+                                                H'gar </a>
+                                            </a>
+                                        {% endif %}
+                                    </h5>
+
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
 
 

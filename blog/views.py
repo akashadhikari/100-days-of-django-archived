@@ -13,7 +13,7 @@ def blogs_list(request):
     init = """<pre class="language-python"><code>
 
 </code></pre>"""
-    blogs = Blog.objects.all().order_by('-id')
+    blogs = Blog.objects.all().order_by('-id')[:10]
     blog_form = BlogForm(request.POST or None, initial={'content': init})
     context = {
         "page_title": "Snippcode",
