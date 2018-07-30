@@ -17,7 +17,8 @@
                     <h5 class="card-title"><a href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title }}</a> |
                         {% if blog.author %}
                         <a href="{% url 'profile:profile' username=blog.author %}"
-                            style="font-size: 12px">{{ blog.created_at|naturaltime }} by: {{ blog.author }}
+                            style="font-size: 12px">{{ blog.created_at|naturaltime }} by
+                            {% if request.user == blog.author %} you {% else %} : {{ blog.author }}{% endif %}
                         </a>
                             {% else %}
                             <a style="font-size: 12px">{{ blog.created_at|naturaltime }} by: Jaqen H'gar </a>
