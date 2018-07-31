@@ -1,6 +1,7 @@
-import datetime
+from datetime import datetime, timedelta
 
 from django.db.models import Count
+from django.utils import timezone
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 from .models import Blog, Like, BlogView, Comment
@@ -13,11 +14,14 @@ def blogs_list(request):
     init = """<pre class="language-python"><code>
 
 </code></pre>"""
-    blogs = Blog.objects.all().order_by('-id')[:10]
+    blogs = Blog.objects.all().order_by('-id')[:5]
     blog_form = BlogForm(request.POST or None, initial={'content': init})
 
     all_views = Blog.objects.all().annotate(count_views=Count('blog_views'))
-    trending_list = all_views.order_by('-count_views')
+    start_date = timezone.now()
+
+    trending_list = all_views.order_by('-count_views').filter(created_at__gte=start_date-timedelta(days=6))[:5]
+
     context = {
         "page_title": "Snippcode",
         "blogs": blogs,
@@ -88,7 +92,7 @@ def blog_detail(request, pk):
 
     view = BlogView(blog=blog,
                     ip=request.META['REMOTE_ADDR'],
-                    created=datetime.datetime.now(),
+                    created=datetime.now(),
                     session=request.session.session_key)
     view.save()
 

@@ -2,7 +2,7 @@
 {% load humanize %}
 
 {% block content %}
-    <div class="container">
+    <div class="container"><br>
         <div class="row">
             <div class="col-9">
                 <br>
@@ -41,8 +41,8 @@
                                         <a style="font-size: 15px" href="{% url 'blog:detail' pk=trend.id %}">
                                             {{ trend.title|truncatechars:30 }}
                                         </a>
-{#                                        <i style="font-size: 10px"class="fas fa-eye"></i>#}
-{#                                        <a style="font-size: 10px">33</a>#}
+                                        {#                                        <i style="font-size: 10px"class="fas fa-eye"></i>#}
+                                        {#                                        <a style="font-size: 10px">33</a>#}
                                         <br>
                                         {% if trend.author %}
                                             <a style="font-size: 12px">{{ trend.created_at|naturaltime }} by</a>
@@ -85,6 +85,16 @@
                                 </div>
                             </div>
                         {% endfor %}
+                    </div>
+                </div><br>
+                <div class="card">
+                    <div style="background-color: #31BBEE;" class="card-header">
+                        Support Snippcode
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Help grow Snippcode.</h5>
+                        <p class="card-text">One small step of support, one giant leap open-source. </p>
+                        <a href="#" class="btn btn-success">Go somewhere</a>
                     </div>
                 </div>
             </div>
