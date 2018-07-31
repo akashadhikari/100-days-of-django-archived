@@ -21,11 +21,6 @@ class BlogForm(forms.Form):
         'class': 'form-control',
     }))
 
-    def clean_content(self):
-        error_message = """Write your code snippet inside the <pre> tag."""
-        if '<pre' and '</code></pre>' not in self.cleaned_data['content']:
-            raise forms.ValidationError(error_message)
-
 
 class CommentForm(forms.Form):
     comment = forms.CharField(help_text='<b>You can also create a code snippet inside <code> pre </code> tags</b>.<br>'

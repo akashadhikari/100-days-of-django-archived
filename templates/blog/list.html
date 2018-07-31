@@ -34,20 +34,25 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        {% for blog in blogs %}
+                        {% for trend in trending_list %}
                             <div class="card w-100">
                                 <div class="card-body" style="height: 75px">
-                                    <h5 class="card-title"><a style="font-size: 15px"
-                                                              href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title|truncatechars:30 }}</a><br>
-                                        {% if blog.author %}
-                                            <a style="font-size: 12px">{{ blog.created_at|naturaltime }} by</a>
-                                            <a href="{% url 'profile:profile' username=blog.author %}"
+                                    <h5 class="card-title">
+                                        <a style="font-size: 15px" href="{% url 'blog:detail' pk=trend.id %}">
+                                            {{ trend.title|truncatechars:30 }}
+                                        </a>
+{#                                        <i style="font-size: 10px"class="fas fa-eye"></i>#}
+{#                                        <a style="font-size: 10px">33</a>#}
+                                        <br>
+                                        {% if trend.author %}
+                                            <a style="font-size: 12px">{{ trend.created_at|naturaltime }} by</a>
+                                            <a href="{% url 'profile:profile' username=trend.author %}"
                                                style="font-size: 12px">
-                                                {% if request.user == blog.author %} you {% else %}
-                                                    {{ blog.author }}{% endif %}
+                                                {% if request.user == trend.author %} you {% else %}
+                                                    {{ trend.author }}{% endif %}
                                             </a>
                                         {% else %}
-                                            <a style="font-size: 12px">{{ blog.created_at|naturaltime }} by: Jaqen
+                                            <a style="font-size: 12px">{{ trend.created_at|naturaltime }} by: Jaqen
                                                 H'gar </a>
                                             </a>
                                         {% endif %}

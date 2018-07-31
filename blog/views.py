@@ -1,6 +1,6 @@
 import datetime
 
-from django.http import HttpResponse
+from django.db.models import Count
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 from .models import Blog, Like, BlogView, Comment
@@ -15,10 +15,14 @@ def blogs_list(request):
 </code></pre>"""
     blogs = Blog.objects.all().order_by('-id')[:10]
     blog_form = BlogForm(request.POST or None, initial={'content': init})
+
+    all_views = Blog.objects.all().annotate(count_views=Count('blog_views'))
+    trending_list = all_views.order_by('-count_views')
     context = {
         "page_title": "Snippcode",
         "blogs": blogs,
-        "blog_form": blog_form
+        "blog_form": blog_form,
+        "trending_list": trending_list
     }
     if blog_form.is_valid():
         title = request.POST.get('title')

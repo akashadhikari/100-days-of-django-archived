@@ -15,10 +15,10 @@ def profile_page(request, username):
     likes_count = Like.objects.filter(user=user).count()
     followers_count = FollowUser.objects.filter(following=user).count()
     following_count = FollowUser.objects.filter(followed_by=user).count()
-    single = Blog.objects.filter(author=user).annotate(count_likes=Count('blog_views'))
-    final_likes_count = 0
+    view_blog = Blog.objects.filter(author=user).annotate(count_views=Count('blog_views'))
+    final_views_count = 0
     for i in range(blogs_count):
-        final_likes_count += single[i].count_likes
+        final_views_count += view_blog[i].count_views
 
     if request.user.is_authenticated:
         qs = FollowUser.objects.filter(following=user).filter(followed_by=request.user)
@@ -37,10 +37,10 @@ def profile_page(request, username):
         'username': username,
         'last_login': last_login,
         'likes_count': likes_count,
-        'final_likes_count': final_likes_count,
+        'final_views_count': final_views_count,
         'followers_count': followers_count,
         'following_count': following_count,
-        'follow_status': follow_status,
+        'follow_status': follow_status
 
     }
     return render(request, "userprofile/profile_home.html", context)

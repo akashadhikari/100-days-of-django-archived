@@ -9,7 +9,7 @@ from blog.models import Blog
 
 def search_list(request):
     query = request.GET.get('q')
-    if query is not None:
+    if query is not '':
         lookups = Q(title__icontains=query) | \
                   Q(code_description__icontains=query) | \
                   Q(body__icontains=query)
