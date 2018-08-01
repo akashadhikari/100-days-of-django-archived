@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 from .models import Blog, Like, BlogView, Comment
+from userprofile.models import FollowUser
 from .forms import BlogForm, CommentForm
 
 # Create your views here.
@@ -14,7 +15,7 @@ def blogs_list(request):
     init = """<pre class="language-python"><code>
 
 </code></pre>"""
-    blogs = Blog.objects.all().order_by('-id')[:5]
+    blogs = Blog.objects.all().order_by('-created_at')[:5]
     blog_form = BlogForm(request.POST or None, initial={'content': init})
 
     all_views = Blog.objects.all().annotate(count_views=Count('blog_views'))
@@ -39,6 +40,17 @@ def blogs_list(request):
         if request.method == 'POST':
             return redirect(reverse('blog:detail', kwargs={'pk': Blog.objects.last().id}))
     return render(request, "blog/list.html", context)
+
+
+def blogs_following_list(request):
+    if request.user.is_authenticated:
+        blogs_following = Blog.objects.all().order_by('-created_at')
+        context = {
+            'blogs_following': blogs_following
+        }
+        return render(request, "blog/following_list.html", context)
+    else:
+        return redirect(reverse('userauth:login'))
 
 
 def blog_create(request):
@@ -143,7 +155,7 @@ def blog_edit(request, pk):
 
 def blog_delete(request, pk):
     blog = get_object_or_404(Blog, id=pk)
-    if request.user.is_authenticated:
+    if request.user.is_authenticated and request.user == blog.author:
         blog.delete()
     return redirect(reverse('blog:list'))
 

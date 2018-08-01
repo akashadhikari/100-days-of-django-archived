@@ -12,7 +12,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=255, default="Untitled")
     code_description = models.TextField(max_length=1000, null=True, blank=True, default="No description provided.")
     body = tinymce_models.HTMLField()
-    author = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    author = models.ForeignKey(User, null=True, blank=True, related_name='author', on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

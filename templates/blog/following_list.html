@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block content %}
+    <div class="container"><br>
+        <div class="row">
+            <div class="col">
+            {% if request.user.is_authenticated %}
+                {% for blog in blogs_following %}
+                    <div class="card w-100">
+                        <div class="card-body" style="height: 75px">
+                            <h5 class="card-title"><a style="font-size: 15px"
+                                                      href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title|truncatechars:30 }}</a><br>
+                                {% if blog.author %}
+                                    <a style="font-size: 12px">{{ blog.created_at|naturaltime }} by</a>
+                                    <a href="{% url 'profile:profile' username=blog.author %}"
+                                       style="font-size: 12px">
+                                        {% if request.user == blog.author %} you {% else %}
+                                            {{ blog.author }}{% endif %}
+                                    </a>
+                                {% else %}
+                                    <a style="font-size: 12px">{{ blog.created_at|naturaltime }} by: Jaqen
+                                        H'gar </a>
+                                {% endif %}
+                            </h5>
+
+                        </div>
+                    </div>
+                {% endfor %}
+                {% else %} Jaja
+            {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

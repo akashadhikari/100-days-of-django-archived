@@ -142,14 +142,14 @@
                     {% for comment in comments %}
 
                         <div class="row">
-                            <div class="col-md-1">
+                            <div class="col-1">
                                 <a href="{% url "profile:profile" username=comment.author.username %}">
                                     <img class="card-img-top" src="{{ comment.author.profile.profile_pic.url }}"
                                          alt="DP">
                                 </a>
 
                             </div>
-                            <div class="col">
+                            <div class="col-7">
                                 <a href="{% url "profile:profile" username=comment.author.username %}">
                                     {{ comment.author.first_name }} {{ comment.author.last_name }}
                                 </a>
@@ -157,6 +157,46 @@
                                 <p>{{ comment|safe }}</p>
 
                             </div>
+                            {% if request.user == comment.author %}
+                                <div class="col-1">
+                                    <a style="color: red" href="{% url 'blog:list' %}"
+                                       data-toggle="modal" data-target="#commentDeleteModal">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="commentDeleteModal" tabindex="-1" role="dialog"
+                                         aria-labelledby="commentDeleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="commentDeleteModalLabel" style="color: black">
+                                                        Delete
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body" style="color: black; font-size: 1rem">
+                                                    Are you sure you want to delete?
+                                                    The item will not be recovered once you delete it.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">
+                                                        Close
+                                                    </button>
+                                                    <a href="#" class="btn btn-danger"
+                                                       role="button">
+                                                        Delete anyway
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            {% endif %}
+
                         </div>
 
 
