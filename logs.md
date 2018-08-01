@@ -198,3 +198,12 @@ adding footer was also done. :p
 - Trending list and Recent list added in the right col.
 
 **Thoughts** : The task of showing trending list (last week's most viewed pastes/snippets) and the most recent paste was accomplished. Some other tweaks were made in the frontend. Its beginning to look a lot cooler.
+
+## Day 22: August 1 2018
+
+**Today's Progress** :
+- Following list post template
+- Comment delete template
+
+**Thoughts** : Not much things happened besides setting up the apropriate templates for following feed and delete comment.
+Still a long way to go and today was certainly not the day full of pace and deliverance.
