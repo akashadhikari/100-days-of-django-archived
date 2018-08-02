@@ -207,3 +207,11 @@ adding footer was also done. :p
 
 **Thoughts** : Not much things happened besides setting up the apropriate templates for following feed and delete comment.
 Still a long way to go and today was certainly not the day full of pace and deliverance.
+
+## Day 23: August 2 2018
+
+**Today's Progress** :
+- Add private snippet feature and massive manipulations on them.
+- Form condition: Hide one of the form field to guest users.
+
+**Thoughts** : What a day! First of all, I implemented the private snippet creating option (Just because of this feature, snippet sharing application goes Pro :grin: ). And then, the restriction was set to the guest user from django form!
