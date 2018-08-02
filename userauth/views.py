@@ -55,7 +55,7 @@ def register_page(request):
     if request.method == 'POST':
         return redirect('userauth:login')
     else:
-        print('Bhai vayena')
+        print('Error!')
     if not request.user.is_authenticated:
         return render(request, 'userauth/register.html', context)
     else:
@@ -63,4 +63,4 @@ def register_page(request):
 
 def logout_view(request):
     logout(request)
-    return redirect(reverse('userauth:login'))
+    return redirect(reverse('blog:list'))

@@ -35,6 +35,7 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         {% for trend in trending_list %}
+                            {% if trend.visibility %}
                             <div class="card w-100">
                                 <div class="card-body" style="height: 75px">
                                     <h5 class="card-title">
@@ -60,6 +61,7 @@
 
                                 </div>
                             </div>
+                            {% endif %}
                         {% endfor %}
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">

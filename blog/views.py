@@ -15,8 +15,9 @@ def blogs_list(request):
     init = """<pre class="language-python"><code>
 
 </code></pre>"""
+    is_auth = request.user.is_authenticated
     blogs = Blog.objects.filter(visibility=True).order_by('-created_at')[:5]
-    blog_form = BlogForm(request.POST or None, initial={'content': init})
+    blog_form = BlogForm(request.POST or None, initial={'content': init, 'visibility': is_auth})
 
     all_views = Blog.objects.all().annotate(count_views=Count('blog_views'))
     start_date = timezone.now()
