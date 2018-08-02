@@ -9,6 +9,7 @@ from tinymce import models as tinymce_models
 
 
 class Blog(models.Model):
+    visibility = models.BooleanField(default=True) # True visibility means Public
     title = models.CharField(max_length=255, default="Untitled")
     code_description = models.TextField(max_length=1000, null=True, blank=True, default="No description provided.")
     body = tinymce_models.HTMLField()

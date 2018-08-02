@@ -39,6 +39,7 @@
             <div class="col-8">
                 {{ fullname }}'s Snippcode:
                 {% for blog in blogs %}
+                    {% if blog.visibility or blog.author == request.user %}
                     <div class="card w-100">
                         <div class="card-body">
                             <h5 class="card-title"><a href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title }}</a>
@@ -47,6 +48,7 @@
                             <p class="card-text">{{ blog.body|safe }}</p>
                         </div>
                     </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>

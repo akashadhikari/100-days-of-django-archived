@@ -15,7 +15,7 @@ def blogs_list(request):
     init = """<pre class="language-python"><code>
 
 </code></pre>"""
-    blogs = Blog.objects.all().order_by('-created_at')[:5]
+    blogs = Blog.objects.filter(visibility=True).order_by('-created_at')[:5]
     blog_form = BlogForm(request.POST or None, initial={'content': init})
 
     all_views = Blog.objects.all().annotate(count_views=Count('blog_views'))
@@ -33,7 +33,8 @@ def blogs_list(request):
         title = request.POST.get('title')
         code_description = request.POST.get('code_description')
         body = request.POST.get('content')
-        new_blog = Blog.objects.create(title=title, code_description=code_description, body=body)
+        visibility = request.POST.get('visibility')
+        new_blog = Blog.objects.create(title=title, visibility=visibility, code_description=code_description, body=body)
         if request.user.is_authenticated:
             new_blog.author = request.user
         new_blog.save()
@@ -44,7 +45,7 @@ def blogs_list(request):
 
 def blogs_following_list(request):
     if request.user.is_authenticated:
-        blogs_following = Blog.objects.all().order_by('-created_at')
+        blogs_following = Blog.objects.filter(visibility=True).order_by('-created_at')
         context = {
             'blogs_following': blogs_following
         }
@@ -67,7 +68,8 @@ def blog_create(request):
         title = request.POST.get('title')
         code_description = request.POST.get('code_description')
         body = request.POST.get('content')
-        new_blog = Blog.objects.create(title=title, code_description=code_description, body=body)
+        visibility = request.POST.get('visibility')
+        new_blog = Blog.objects.create(title=title, visibility=visibility, code_description=code_description, body=body)
         if request.user.is_authenticated:
             new_blog.author = request.user
         new_blog.save()
@@ -77,7 +79,13 @@ def blog_create(request):
 
 
 def blog_detail(request, pk):
-    blog = get_object_or_404(Blog, id=pk)
+
+    blog_all = get_object_or_404(Blog, id=pk)
+    if request.user == blog_all.author:
+        blog = get_object_or_404(Blog, id=pk)
+    else:
+        blog = get_object_or_404(Blog.objects.filter(visibility=True), id=pk)
+
     page_title = blog.title + '- Snippcode'
 
     if blog.author:
@@ -85,8 +93,7 @@ def blog_detail(request, pk):
         blog_author = True
 
     else:
-        author = "A man has no name."
-        blog_author = False
+        author, blog_author = "A man has no name.", False
 
     if request.user.is_authenticated:
         like = Like.objects.filter(blog=pk).filter(user=request.user).first()
@@ -94,9 +101,7 @@ def blog_detail(request, pk):
         likers = Like.objects.values_list('user__username', flat=True).filter(blog=pk)
 
     else:
-        like = ''
-        like_count = ''
-        likers = ''
+        like, like_count, likers = ''
 
     # Count views
 
@@ -137,7 +142,8 @@ def blog_edit(request, pk):
     blog = get_object_or_404(Blog, id=pk)
     edit_form = BlogForm(request.POST or None, initial={'title': blog.title,
                                                         'code_description':blog.code_description,
-                                                        'content': blog.body})
+                                                        'content': blog.body,
+                                                        'visibility': blog.visibility})
     context = {
         'form': edit_form,
         'page_title': 'Edit Snippcode - Snippcode'
@@ -146,7 +152,8 @@ def blog_edit(request, pk):
         title = request.POST.get('title')
         code_description = request.POST.get('code_description')
         body = request.POST.get('content')
-        Blog.objects.filter(id=pk).update(title=title, code_description=code_description, body=body)
+        visibility = request.POST.get('visibility')
+        Blog.objects.filter(id=pk).update(title=title, visibility=visibility, code_description=code_description, body=body)
     if request.method == 'POST':
         return redirect(reverse('blog:detail', kwargs={'pk': blog.id}))
 

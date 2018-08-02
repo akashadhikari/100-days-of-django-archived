@@ -62,6 +62,7 @@
                 <p class="card-text">{{ blog.body|safe }}</p>
                 <hr>
                 <p>Posted: {{ blog.created_at|naturaltime }}</p>
+            {% if blog.visibility %}
                 <p><i class="fas fa-eye"></i> Snipp views: {{ view_count }}</p>
                 {% if request.user.is_authenticated %}
                     <a data-toggle="modal" data-target="#likedByThesePeople" href="#">{{ like_count }}
@@ -97,6 +98,9 @@
                         <p><a href="{% url 'blog:like' pk=blog.id %}">Like</a></p>
                     {% endif %}
                 {% endif %}
+            {% else %}
+                <p><i class="fas fa-eye-slash"></i> This is a private snipp. Only you can see the post.</p>
+            {% endif %}
 
             </div>
         </div>
@@ -110,7 +114,11 @@
                 <h5 class="card-title">
                     <div class="row">
                         <div class="col">
+                            {% if blog.visibility %}
                             <h3>All responses</h3>
+                            {% else %}
+                                <h3>You can still reply to your private snipp.</h3>
+                            {% endif %}
                             <hr>
                         </div>
                     </div>

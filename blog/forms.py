@@ -12,6 +12,17 @@ class BlogForm(forms.Form):
         'rows':4,
         'cols': 15
     }))
+    TRUE_FALSE_CHOICES = (
+        (True, 'Public'),
+        (False, 'Private')
+    )
+
+    visibility = forms.ChoiceField(choices=TRUE_FALSE_CHOICES,
+                                  label="Visibility",
+                                  required= True,
+                                  initial='', widget=forms.Select(attrs={
+            'class': 'form-control',
+    }))
     content = forms.CharField(help_text='<b>Place your code snippet in the blank region bounded by '
                                         '<code> code </code> tag. Change <code> class="language-python" </code> '
                                         'to your desired language.</b>'
