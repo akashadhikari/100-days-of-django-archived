@@ -59,7 +59,8 @@ def blog_create(request):
     init = """<pre class="language-python"><code>
 
 </code></pre>"""
-    blog_form = BlogForm(request.POST or None, initial={'content':init})
+    is_auth = request.user.is_authenticated
+    blog_form = BlogForm(request.POST or None, initial={'content':init, 'visibility': is_auth})
 
     context = {
         "page_title": "New Snippcode",

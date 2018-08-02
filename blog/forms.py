@@ -39,6 +39,8 @@ class BlogForm(forms.Form):
 
         super(BlogForm, self).__init__(*args, **kwargs)
 
+        # import ipdb; ipdb.set_trace()
+
         if not self.is_auth:
             del self.fields['visibility']
 

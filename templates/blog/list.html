@@ -7,9 +7,13 @@
             <div class="col-9">
                 <br>
                 <h3>Add Quick Snippet.</h3>
-                <br>
 
                 {% include 'blog/modal.html' %}
+
+
+                {% if not request.user.is_authenticated %}
+                    <a>To create a <b>private paste</b>, you need to login first.</a><br>
+                {% endif %}<br>
 
                 <form method="POST">{% csrf_token %}
                     {{ blog_form.as_p }}
@@ -36,31 +40,31 @@
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         {% for trend in trending_list %}
                             {% if trend.visibility %}
-                            <div class="card w-100">
-                                <div class="card-body" style="height: 75px">
-                                    <h5 class="card-title">
-                                        <a style="font-size: 15px" href="{% url 'blog:detail' pk=trend.id %}">
-                                            {{ trend.title|truncatechars:30 }}
-                                        </a>
-                                        {#                                        <i style="font-size: 10px"class="fas fa-eye"></i>#}
-                                        {#                                        <a style="font-size: 10px">33</a>#}
-                                        <br>
-                                        {% if trend.author %}
-                                            <a style="font-size: 12px">{{ trend.created_at|naturaltime }} by</a>
-                                            <a href="{% url 'profile:profile' username=trend.author %}"
-                                               style="font-size: 12px">
-                                                {% if request.user == trend.author %} you {% else %}
-                                                    {{ trend.author }}{% endif %}
+                                <div class="card w-100">
+                                    <div class="card-body" style="height: 75px">
+                                        <h5 class="card-title">
+                                            <a style="font-size: 15px" href="{% url 'blog:detail' pk=trend.id %}">
+                                                {{ trend.title|truncatechars:30 }}
                                             </a>
-                                        {% else %}
-                                            <a style="font-size: 12px">{{ trend.created_at|naturaltime }} by: Jaqen
-                                                H'gar </a>
-                                            </a>
-                                        {% endif %}
-                                    </h5>
+                                            {#                                        <i style="font-size: 10px"class="fas fa-eye"></i>#}
+                                            {#                                        <a style="font-size: 10px">33</a>#}
+                                            <br>
+                                            {% if trend.author %}
+                                                <a style="font-size: 12px">{{ trend.created_at|naturaltime }} by</a>
+                                                <a href="{% url 'profile:profile' username=trend.author %}"
+                                                   style="font-size: 12px">
+                                                    {% if request.user == trend.author %} you {% else %}
+                                                        {{ trend.author }}{% endif %}
+                                                </a>
+                                            {% else %}
+                                                <a style="font-size: 12px">{{ trend.created_at|naturaltime }} by: Jaqen
+                                                    H'gar </a>
+                                                </a>
+                                            {% endif %}
+                                        </h5>
 
+                                    </div>
                                 </div>
-                            </div>
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -88,7 +92,8 @@
                             </div>
                         {% endfor %}
                     </div>
-                </div><br>
+                </div>
+                <br>
                 <div class="card">
                     <div style="background-color: #31BBEE; color: white; " class="card-header">
                         Support Snippcode
