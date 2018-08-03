@@ -11,7 +11,7 @@ from .forms import BlogForm, CommentForm
 # Create your views here.
 
 
-def blogs_list(request):
+def home(request):
     init = """<pre class="language-python"><code>
 
 </code></pre>"""
@@ -48,8 +48,10 @@ def blogs_following_list(request):
     if request.user.is_authenticated:
         blogs_following = Blog.objects.filter(visibility=True).order_by('-created_at')
         context = {
-            'blogs_following': blogs_following
+            'blogs_following': blogs_following,
+            'page_title': 'Following Feed'
         }
+        # Blog.objects.filter(author=FollowUser.objects.filter(followed_by=request.user))
         return render(request, "blog/following_list.html", context)
     else:
         return redirect(reverse('userauth:login'))

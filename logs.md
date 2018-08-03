@@ -215,3 +215,11 @@ Still a long way to go and today was certainly not the day full of pace and deli
 - Form condition: Hide one of the form field to guest users.
 
 **Thoughts** : What a day! First of all, I implemented the private snippet creating option (Just because of this feature, snippet sharing application goes Pro :grin: ). And then, the restriction was set to the guest user from django form!
+
+## Day 24: August 3, 2018
+
+**Today's Progress** :
+- Navbar top fixed.
+- Select related Django ORM.
+
+**Thoughts** : Some focus on front-end with navbar being fixed upon scroll. Also, I was working with select related queries for following users. Work is going on.
