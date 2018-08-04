@@ -149,6 +149,7 @@ def blog_edit(request, pk):
                                                         'content': blog.body,
                                                         'visibility': blog.visibility})
     context = {
+        'blog': blog,
         'form': edit_form,
         'page_title': 'Edit Snippcode - Snippcode'
     }

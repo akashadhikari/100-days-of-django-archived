@@ -3,6 +3,8 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.models import User
 
 from .models import FollowUser
+from .forms import ProfileEditForm
+from userprofile.models import Profile
 from blog.models import Blog, Like
 
 
@@ -33,6 +35,7 @@ def profile_page(request, username):
         'user': user,
         'blogs': blogs,
         'blogs_count': blogs_count,
+        'page_title': user.first_name + '\'s Profile',
         'fullname': full_name,
         'username': username,
         'last_login': last_login,
@@ -44,6 +47,33 @@ def profile_page(request, username):
 
     }
     return render(request, "userprofile/profile_home.html", context)
+
+
+def profile_edit(request, username):
+    user = get_object_or_404(User, username=username)
+    profile = get_object_or_404(Profile, user=user.id)
+    full_name = user.first_name + " " + user.last_name
+    edit_profile_form = ProfileEditForm(request.POST or None, initial={'first_name': user.first_name,
+                                                                       'last_name': user.last_name,
+                                                                       'address': profile.location
+                                                                       })
+
+    context = {
+        'page_title': 'Edit profile',
+        'user': user,
+        'fullname': full_name,
+        'edit_profile_form': edit_profile_form
+    }
+    if edit_profile_form.is_valid():
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        profile.location = request.POST.get('address')
+        profile.save()
+        User.objects.filter(username=username).update(first_name=first_name, last_name=last_name)
+
+    if request.method == 'POST':
+        return redirect(reverse('profile:profile', kwargs={'username': username}))
+    return render(request, "userprofile/profile_edit.html", context)
 
 
 def follow_user(request, username):

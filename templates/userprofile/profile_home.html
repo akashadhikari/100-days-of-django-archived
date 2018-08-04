@@ -11,7 +11,8 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ fullname }}
                             {% if request.user == user %}
-                                <a data-toggle="tooltip" title="Edit Profile"><i class="fas fa-pencil-alt"></i></a>
+                                <a data-toggle="tooltip" href="{% url 'profile:edit' username=user.username %}"
+                                   title="Edit Profile"><i class="fas fa-pencil-alt"></i></a>
                             {% endif %}
                         </h5>
                         <p class="card-text">@{{ username }}</p>
@@ -40,26 +41,27 @@
                 {{ fullname }}'s Snippcode:
                 {% for blog in blogs %}
                     {% if blog.visibility %}
-                    <div class="card w-100">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title }}</a>
-                            </h5>
-                            <p class="alert alert-success">{{ blog.code_description }}</p>
-                            <p class="card-text">{{ blog.body|safe }}</p>
+                        <div class="card w-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title }}</a>
+                                </h5>
+                                <p class="alert alert-success">{{ blog.code_description }}</p>
+                                <p class="card-text">{{ blog.body|safe }}</p>
+                            </div>
                         </div>
-                    </div>
-                        {% else %}
+                    {% else %}
                         {% if blog.author == request.user %}
                             <div class="card w-100">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title }}</a>
-                            </h5>
-                            <p class="alert alert-success">{{ blog.code_description }}</p>
-                            <p class="card-text">{{ blog.body|safe }}</p>
-                            <p><i class="fas fa-eye-slash"></i> This is a private Snipp.</p>
-                        </div>
-                    </div>
-                            {% endif %}
+                                <div class="card-body">
+                                    <h5 class="card-title"><a
+                                            href="{% url 'blog:detail' pk=blog.id %}">{{ blog.title }}</a>
+                                    </h5>
+                                    <p class="alert alert-success">{{ blog.code_description }}</p>
+                                    <p class="card-text">{{ blog.body|safe }}</p>
+                                    <p><i class="fas fa-eye-slash"></i> This is a private Snipp.</p>
+                                </div>
+                            </div>
+                        {% endif %}
                     {% endif %}
                 {% endfor %}
             </div>
