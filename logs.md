@@ -223,3 +223,12 @@ Still a long way to go and today was certainly not the day full of pace and deli
 - Select related Django ORM.
 
 **Thoughts** : Some focus on front-end with navbar being fixed upon scroll. Also, I was working with select related queries for following users. Work is going on.
+
+## Day 25: August 4, 2018
+
+**Today's Progress** :
+- Profile Edit form.
+- User snippet edit permission fix.
+
+**Thoughts** : A mandatory feature of profile edit was done. In the meantime, I was unaware about the fact that I had't
+set any permissions for the users who were trying to sneak into editing someone else's post. This is done now.
