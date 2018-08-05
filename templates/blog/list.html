@@ -12,7 +12,8 @@
 
 
                 {% if not request.user.is_authenticated %}
-                    <a>To create a <b>private paste</b>, you need to login first.</a><br>
+                    <a>To create a <b>private paste</b>, you need to <a href="{% url 'userauth:login' %}">login</a>
+                        first.</a><br>
                 {% endif %}<br>
 
                 <form method="POST">{% csrf_token %}

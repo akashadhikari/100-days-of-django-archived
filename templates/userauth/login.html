@@ -6,7 +6,9 @@
         <form method="POST">{% csrf_token %}
             {{ login_form }}
             <br>
-            <button class="btn btn-success" type="submit">Submit</button>
+            <button class="btn btn-success" type="submit">Submit</button>&nbsp;
+            <a>New here? <a href="{% url 'userauth:register' %}">Register</a> and join the awesome community.</a>
         </form>
+
     </div>
 {% endblock %}

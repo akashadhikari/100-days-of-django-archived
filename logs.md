@@ -232,3 +232,11 @@ Still a long way to go and today was certainly not the day full of pace and deli
 
 **Thoughts** : A mandatory feature of profile edit was done. In the meantime, I was unaware about the fact that I had't
 set any permissions for the users who were trying to sneak into editing someone else's post. This is done now.
+
+## Day 26: August 5, 2018
+
+**Today's Progress** :
+- Media cdn configurations.
+- Frontend fixes.
+
+**Thoughts** :Of course, it's always wise to store media (and static) to a separate CDN. This is a test where I have kept the cdn within the project directory for simplicity but the basic idea is understandable.

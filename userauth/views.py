@@ -55,7 +55,7 @@ def register_page(request):
     if request.method == 'POST':
         return redirect('userauth:login')
     else:
-        print('Error!')
+        print('Check it twice!')
     if not request.user.is_authenticated:
         return render(request, 'userauth/register.html', context)
     else:
