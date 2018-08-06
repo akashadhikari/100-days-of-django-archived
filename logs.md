@@ -240,3 +240,11 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Frontend fixes.
 
 **Thoughts** :Of course, it's always wise to store media (and static) to a separate CDN. This is a test where I have kept the cdn within the project directory for simplicity but the basic idea is understandable.
+
+## Day 27: August 6, 2018
+
+**Today's Progress** :
+- Created [Talk to u later](https://github.com/akashadhikari/talk-to-u-later)
+- Started Celery integration.
+
+**Thoughts** : This app is all about sending timed message to a Facebook user or a group. The sending part is over and a final task of scheduling is on progress.
