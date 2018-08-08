@@ -256,3 +256,5 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Some works on date picker input. (not integrated)
 
 **Thoughts** : The goal of [Talk to u later](https://github.com/akashadhikari/talk-to-u-later) is to create scheduled tasks. Thus, the date-field input needs to be user friendly and workable. Not much of progress was made besides including that form field.
+
+## Day off (August 8) (This is a serious violation of continuity.)
