@@ -248,3 +248,11 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Started Celery integration.
 
 **Thoughts** : This app is all about sending timed message to a Facebook user or a group. The sending part is over and a final task of scheduling is on progress.
+
+## Day 27: August 7, 2018
+
+**Today's Progress** :
+- Added datefield for scheduled date input.
+- Some works on date picker input. (not integrated)
+
+**Thoughts** : The goal of [Talk to u later](https://github.com/akashadhikari/talk-to-u-later) is to create scheduled tasks. Thus, the date-field input needs to be user friendly and workable. Not much of progress was made besides including that form field.
