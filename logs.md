@@ -258,3 +258,11 @@ set any permissions for the users who were trying to sneak into editing someone 
 **Thoughts** : The goal of [Talk to u later](https://github.com/akashadhikari/talk-to-u-later) is to create scheduled tasks. Thus, the date-field input needs to be user friendly and workable. Not much of progress was made besides including that form field.
 
 ## Day off (August 8) (This is a serious violation of continuity.)
+
+## Day 28: August 9, 2018
+
+**Today's Progress** :
+- [Talk to u later](https://github.com/akashadhikari/talk-to-u-later)
+- Initialized Breathing Ktm web app for Django and Deep Learning integration.
+
+**Thoughts** : Yay! [Talk to u later](https://github.com/akashadhikari/talk-to-u-later) is here! You can send delayed Fb messages with it. Enjoy!
