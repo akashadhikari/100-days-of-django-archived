@@ -266,3 +266,11 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Initialized Breathing Ktm web app for Django and Deep Learning integration.
 
 **Thoughts** : Yay! [Talk to u later](https://github.com/akashadhikari/talk-to-u-later) is here! You can send delayed Fb messages with it. Enjoy!
+
+## Day 29: August 10, 2018
+
+**Today's Progress** :
+- Django app and Deep Learning models integration.
+- Re-modified directory structure for Breathing Ktm web app.
+
+**Thoughts** : We are integrating Django with deep learning and analytics for Breathing Ktm project. This is going to be fun!
