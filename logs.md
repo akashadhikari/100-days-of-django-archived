@@ -274,3 +274,10 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Re-modified directory structure for Breathing Ktm web app.
 
 **Thoughts** : We are integrating Django with deep learning and analytics for Breathing Ktm project. This is going to be fun!
+
+## Day 30: August 11, 2018
+
+**Today's Progress** :
+- DL Model fixes for Django app.
+
+**Thoughts** : Slight modifications in Django app.
