@@ -189,6 +189,8 @@ adding footer was also done. :p
 
 **Thoughts** : Lots of changes have been made on the home page. First of all, the list view is placed to a right column as most of the priority is given to the **Add Quick Snippet** feature. The UI looks much better.
 
+![20per](https://raw.githubusercontent.com/akashadhikari/100-days-of-ML/master/src/scratch/images/20perdjango.png)
+
 # WEEK 4 STARTS
 
 ## Day 21: July 31 2018
@@ -249,6 +251,8 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Thoughts** : This app is all about sending timed message to a Facebook user or a group. The sending part is over and a final task of scheduling is on progress.
 
+# WEEK 5 STARTS
+
 ## Day 27: August 7, 2018
 
 **Today's Progress** :
@@ -279,5 +283,15 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Today's Progress** :
 - DL Model fixes for Django app.
+- Django Geo data research
 
-**Thoughts** : Slight modifications in Django app.
+**Thoughts** : Slight modifications in Django app and Geo data research.
+
+![30per](https://raw.githubusercontent.com/akashadhikari/100-days-of-ML/master/src/scratch/images/30perdjango.png)
+
+## Day 31: August 12, 2018
+
+**Today's Progress** :
+- Django data visualization integration (D3JS)
+
+**Thoughts** : Some progress were made on Django + D3 integration for data visualization for air pollution data. This test is completely static.
