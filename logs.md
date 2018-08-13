@@ -295,3 +295,11 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Django data visualization integration (D3JS)
 
 **Thoughts** : Some progress were made on Django + D3 integration for data visualization for air pollution data. This test is completely static.
+
+## Day 32: August 13, 2018
+
+**Today's Progress** :
+- Basic navbar and other few changes in the frontend.
+- Research on sample air quality sites (Australian Government)
+
+**Thoughts** : The site needs some beautiful frontend. Some efforts have been made on it. Also, performed some research on current top government sites for air quality.
