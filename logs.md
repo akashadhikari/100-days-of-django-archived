@@ -243,6 +243,8 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Thoughts** :Of course, it's always wise to store media (and static) to a separate CDN. This is a test where I have kept the cdn within the project directory for simplicity but the basic idea is understandable.
 
+# WEEK 5 STARTS
+
 ## Day 27: August 6, 2018
 
 **Today's Progress** :
@@ -251,9 +253,8 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Thoughts** : This app is all about sending timed message to a Facebook user or a group. The sending part is over and a final task of scheduling is on progress.
 
-# WEEK 5 STARTS
 
-## Day 27: August 7, 2018
+## Day 28: August 7, 2018
 
 **Today's Progress** :
 - Added datefield for scheduled date input.
@@ -263,7 +264,7 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 ## Day off (August 8) (This is a serious violation of continuity.)
 
-## Day 28: August 9, 2018
+## Day 29: August 9, 2018
 
 **Today's Progress** :
 - [Talk to u later](https://github.com/akashadhikari/talk-to-u-later)
@@ -271,7 +272,7 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Thoughts** : Yay! [Talk to u later](https://github.com/akashadhikari/talk-to-u-later) is here! You can send delayed Fb messages with it. Enjoy!
 
-## Day 29: August 10, 2018
+## Day 30: August 10, 2018
 
 **Today's Progress** :
 - Django app and Deep Learning models integration.
@@ -279,7 +280,9 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Thoughts** : We are integrating Django with deep learning and analytics for Breathing Ktm project. This is going to be fun!
 
-## Day 30: August 11, 2018
+![30per](https://raw.githubusercontent.com/akashadhikari/100-days-of-ML/master/src/scratch/images/30perdjango.png)
+
+## Day 31: August 11, 2018
 
 **Today's Progress** :
 - DL Model fixes for Django app.
@@ -287,19 +290,26 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Thoughts** : Slight modifications in Django app and Geo data research.
 
-![30per](https://raw.githubusercontent.com/akashadhikari/100-days-of-ML/master/src/scratch/images/30perdjango.png)
 
-## Day 31: August 12, 2018
+## Day 32: August 12, 2018
 
 **Today's Progress** :
 - Django data visualization integration (D3JS)
 
 **Thoughts** : Some progress were made on Django + D3 integration for data visualization for air pollution data. This test is completely static.
 
-## Day 32: August 13, 2018
+## Day 33: August 13, 2018
 
 **Today's Progress** :
 - Basic navbar and other few changes in the frontend.
 - Research on sample air quality sites (Australian Government)
 
 **Thoughts** : The site needs some beautiful frontend. Some efforts have been made on it. Also, performed some research on current top government sites for air quality.
+
+## Day 34: August 14, 2018
+
+**Today's Progress** :
+- GeoDjango framework for spatial data.
+- PostGIS setup for mapping web app.
+
+**Thoughts** : Interesting and important learning for geospatial analysis. Some concepts of GeoDjango along with PostGIS were implemented.
