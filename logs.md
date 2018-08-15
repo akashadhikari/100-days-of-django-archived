@@ -313,3 +313,14 @@ set any permissions for the users who were trying to sneak into editing someone 
 - PostGIS setup for mapping web app.
 
 **Thoughts** : Interesting and important learning for geospatial analysis. Some concepts of GeoDjango along with PostGIS were implemented.
+
+# WEEK 5 STARTS
+
+## Day 35: August 15, 2018
+
+**Today's Progress** :
+- Leaflet Integration in Django admin.
+- Solve GDAL Python binding issue.
+
+**Thoughts** : Leaflet has been integrated to the project along with custom models for location selection. Also, the issue of GDAL has been resolved for Python binding. The application works without known bugs.
+
