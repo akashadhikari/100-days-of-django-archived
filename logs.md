@@ -324,3 +324,11 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Thoughts** : Leaflet has been integrated to the project along with custom models for location selection. Also, the issue of GDAL has been resolved for Python binding. The application works without known bugs.
 
+## Day 36: August 16, 2018
+
+**Today's Progress** :
+- Integrated shape files of Nepal districts on Django.
+- Initiated a parallel project [nepal-rescue](https://github.com/BreathingNepal/nepal-rescue) (a fork of [kerala-rescue](https://keralarescue.in))
+
+**Thoughts** : Lots of cool things happened today. First, an integration of shape file on Django was successfully tested for each districts of Nepal. This is for Breathing Kathmandu project mapping. Also, today marks the initiation of nepal-rescue project which is inspired by rescue-kerala initiative.
+
