@@ -332,3 +332,10 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Thoughts** : Lots of cool things happened today. First, an integration of shape file on Django was successfully tested for each districts of Nepal. This is for Breathing Kathmandu project mapping. Also, today marks the initiation of nepal-rescue project which is inspired by rescue-kerala initiative.
 
+## Day 37: August 17, 2018
+
+**Today's Progress** :
+- Displayed Nepal district shape file data in Django application with Ajax. 
+- Depplyed [Nepal Rescue](https://nepalrescue.herokuapp.com/) app to heroku.
+
+**Thoughts** : What an interesting day! Now, I can play with the shape files within a web application. It will be fun to try out some stuff. Also, rescue nepal app was deployed for a test. Many modifications are yet to come.
