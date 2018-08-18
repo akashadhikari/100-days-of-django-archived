@@ -339,3 +339,11 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Depplyed [Nepal Rescue](https://nepalrescue.herokuapp.com/) app to heroku.
 
 **Thoughts** : What an interesting day! Now, I can play with the shape files within a web application. It will be fun to try out some stuff. Also, rescue nepal app was deployed for a test. Many modifications are yet to come.
+
+## Day 38: August 18, 2018
+
+**Today's Progress** :
+- Map layers info and map instance info could be displayed through a pop-up. 
+
+**Thoughts** : Using some Ajax to display the info of the shape file attributes that is saved to the model. Django's GIS framework is smooth and effective by every means.
+
