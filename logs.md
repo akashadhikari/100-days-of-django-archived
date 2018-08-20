@@ -354,3 +354,9 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Thoughts** : Some custom styles were included on the map layers. For eg: The districts can now be labeled as "Green zone" and "Red zone".
 
+## Day 40: August 20, 2018
+
+**Today's Progress** :
+- Add layer controls to the map.
+
+**Thoughts** : The layer control feature is still underway. Functionality includes features like checkbox inclusion for layer display.
