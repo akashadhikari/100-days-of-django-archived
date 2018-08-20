@@ -347,3 +347,10 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Thoughts** : Using some Ajax to display the info of the shape file attributes that is saved to the model. Django's GIS framework is smooth and effective by every means.
 
+## Day 39: August 19, 2018
+
+**Today's Progress** :
+- Addition of custom layer styling on map.
+
+**Thoughts** : Some custom styles were included on the map layers. For eg: The districts can now be labeled as "Green zone" and "Red zone".
+
