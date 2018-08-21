@@ -360,3 +360,10 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Add layer controls to the map.
 
 **Thoughts** : The layer control feature is still underway. Functionality includes features like checkbox inclusion for layer display.
+
+## Day 41: August 21, 2018
+
+**Today's Progress** :
+- Layer controls debugging.
+
+**Thoughts** : The layer control feature has to be fixed with some unknown error in the console.
