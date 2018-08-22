@@ -367,3 +367,10 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Layer controls debugging.
 
 **Thoughts** : The layer control feature has to be fixed with some unknown error in the console.
+
+## Day 42: August 22, 2018
+
+**Today's Progress** :
+- Leaflet routing machine API.
+
+**Thoughts** : The routing machine API allows to create a routing based maps from one place to the other. I managed to add some cdns and appropriate pre-setup for the demo application. Work on "something new" will be done from tomorrow.
