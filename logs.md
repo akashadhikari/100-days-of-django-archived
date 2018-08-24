@@ -374,3 +374,10 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Leaflet routing machine API.
 
 **Thoughts** : The routing machine API allows to create a routing based maps from one place to the other. I managed to add some cdns and appropriate pre-setup for the demo application. Work on "something new" will be done from tomorrow.
+
+## Day 43: August 23, 2018
+
+**Today's Progress** :
+- Initialize DMS portal app.
+
+**Thoughts** : The day marks the initiation of DMS portal. Something exiting is coming.
