@@ -381,3 +381,10 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Initialize DMS portal app.
 
 **Thoughts** : The day marks the initiation of DMS portal. Something exiting is coming.
+
+## Day 44: August 24, 2018
+
+**Today's Progress** :
+- Add conservation area layer onto map.
+
+**Thoughts** : This is for Pramod. Just added layer of conservation area in the admin display.
