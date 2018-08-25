@@ -388,3 +388,11 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Add conservation area layer onto map.
 
 **Thoughts** : This is for Pramod. Just added layer of conservation area in the admin display.
+
+## Day 45: August 25, 2018
+
+**Today's Progress** :
+- Postgress connection for DMS app.
+- Concept note and proposal preparation.
+
+**Thoughts** : The DMS app's postgres integration and proposal preparation.
