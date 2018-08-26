@@ -396,3 +396,11 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Concept note and proposal preparation.
 
 **Thoughts** : The DMS app's postgres integration and proposal preparation.
+
+## Day 46: August 26, 2018
+
+**Today's Progress** :
+- Static and media settings
+- Basic template settings for DMS.
+
+**Thoughts** : CDN mock-up were used for static-media settings. Also, basic template is rendered for further tasks.
