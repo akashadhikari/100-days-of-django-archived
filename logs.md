@@ -404,3 +404,11 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Basic template settings for DMS.
 
 **Thoughts** : CDN mock-up were used for static-media settings. Also, basic template is rendered for further tasks.
+
+## Day 47: August 27, 2018
+
+**Today's Progress** :
+- DMS template directories and homepage layout.
+
+**Thoughts** : Some JS stuff for homepage layout and additional template directories management were done.
+
