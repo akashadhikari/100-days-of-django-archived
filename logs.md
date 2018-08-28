@@ -412,3 +412,9 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Thoughts** : Some JS stuff for homepage layout and additional template directories management were done.
 
+## Day 48: August 28, 2018
+
+**Today's Progress** :
+- DMS homepage modifications, static files manipulation and much more.
+
+**Thoughts** : Lots of works were done on managing DMS files and layouts. Some issues are to be fixd still.
