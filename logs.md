@@ -418,3 +418,11 @@ set any permissions for the users who were trying to sneak into editing someone 
 - DMS homepage modifications, static files manipulation and much more.
 
 **Thoughts** : Lots of works were done on managing DMS files and layouts. Some issues are to be fixd still.
+
+## Day 49: August 29, 2018
+
+**Today's Progress** :
+- Django vue basic setup
+- Advance Python series: Args, kwargs, generator, map, reduce and filter.
+
+**Thoughts** : Some tasks on Django vue setup and tutorial on advance series.
