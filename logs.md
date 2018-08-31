@@ -434,3 +434,12 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Advance Python series: Decorators in Python.
 
 **Thoughts** : Some good old fixes for DMS and moreover, set tutorial on Python was covered.
+
+## Day 51: August 31, 2018
+
+**Today's Progress** :
+- Django DMS request help model.
+- Python decorators tutorial.
+
+**Thoughts** : RequestHelp model for DMS system and Python decorator tutorials were covered.
+
