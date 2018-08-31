@@ -426,3 +426,11 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Advance Python series: Args, kwargs, generator, map, reduce and filter.
 
 **Thoughts** : Some tasks on Django vue setup and tutorial on advance series.
+
+## Day 50: August 30, 2018
+
+**Today's Progress** :
+- Django frontend fixes for DMS
+- Advance Python series: Decorators in Python.
+
+**Thoughts** : Some good old fixes for DMS and moreover, set tutorial on Python was covered.
