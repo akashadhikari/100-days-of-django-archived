@@ -441,5 +441,13 @@ set any permissions for the users who were trying to sneak into editing someone 
 - Django DMS request help model.
 - Python decorators tutorial.
 
-**Thoughts** : RequestHelp model for DMS system and Python decorator tutorials were covered.
+**Thoughts** : RequestHelp model for DMS system and Python decorator tutorials were covered.\
+
+## Day 52: Sept 1, 2018
+
+**Today's Progress** :
+- Django DMS request help model modification.
+- Python basic threading tutorial.
+
+**Thoughts** : RequestHelp model for DMS system was modified but the template part is remained to be done. Python basic threading tutorials were covered.
 
