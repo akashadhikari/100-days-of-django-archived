@@ -451,3 +451,11 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Thoughts** : RequestHelp model for DMS system was modified but the template part is remained to be done. Python basic threading tutorials were covered.
 
+## Day 53: Sept 2, 2018
+
+**Today's Progress** :
+- Django DMS request help model, form, views and templates (ongoing).
+- Python `__slot__` functions.
+
+**Thoughts** : RequestHelp model was modified; form were added; view was created and template was rendered. Also, python's `__slot__` was covered.
+
