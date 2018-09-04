@@ -459,3 +459,5 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 **Thoughts** : RequestHelp model was modified; form were added; view was created and template was rendered. Also, python's `__slot__` was covered.
 
+No work days: Sept 3 and 4
+
