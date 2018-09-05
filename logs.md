@@ -461,3 +461,10 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 No work days: Sept 3 and 4
 
+## Day 53: Sept 3, 2018
+
+**Today's Progress** :
+- Django DMS changes; frontend, models and features revision.
+- Python Collection, Enumerate and Object inspection functions.
+
+**Thoughts** : DMS has an enhaced and rather a different path ahead. So, a lot of changes were made in the new branch. For advance Python series, I covered chapters like Collection, Enumerate and Object inspection.
