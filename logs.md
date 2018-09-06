@@ -461,10 +461,19 @@ set any permissions for the users who were trying to sneak into editing someone 
 
 No work days: Sept 3 and 4
 
-## Day 53: Sept 3, 2018
+## Day 54: Sept 5, 2018
 
 **Today's Progress** :
 - Django DMS changes; frontend, models and features revision.
 - Python Collection, Enumerate and Object inspection functions.
 
 **Thoughts** : DMS has an enhaced and rather a different path ahead. So, a lot of changes were made in the new branch. For advance Python series, I covered chapters like Collection, Enumerate and Object inspection.
+
+## Day 55: Sept 6, 2018
+
+**Today's Progress** :
+- Django TMS app jumbotron, image and models.
+- Python Comprehesions.
+
+**Thoughts** : TMS app frontend fixes (home page layout) and modified models for user (provider) profile. For Advance Python series, the topic of comprehensions was covered.
+
