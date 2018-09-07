@@ -477,3 +477,11 @@ No work days: Sept 3 and 4
 
 **Thoughts** : TMS app frontend fixes (home page layout) and modified models for user (provider) profile. For Advance Python series, the topic of comprehensions was covered.
 
+## Day 56: Sept 7, 2018
+
+**Today's Progress** :
+- Django TMS app layout play.
+- Python- Exception handling.
+
+**Thoughts** : TMS app frontend fixes and advance-python series' Exception handling was covered.
+
