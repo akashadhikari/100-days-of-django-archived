@@ -485,3 +485,12 @@ No work days: Sept 3 and 4
 
 **Thoughts** : TMS app frontend fixes and advance-python series' Exception handling was covered.
 
+## Day 57: Sept 8, 2018
+
+**Today's Progress** :
+- Django auth app for TMS.
+- Python- OOP first part.
+
+**Thoughts** : For TMS, some auth part was dealt. Also, for advance-python series, OOP's first part was over.
+
+
