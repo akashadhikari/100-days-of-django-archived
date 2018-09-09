@@ -493,4 +493,6 @@ No work days: Sept 3 and 4
 
 **Thoughts** : For TMS, some auth part was dealt. Also, for advance-python series, OOP's first part was over.
 
+**Work related trip to Pokhara and Ktm for a few days**
+
 
